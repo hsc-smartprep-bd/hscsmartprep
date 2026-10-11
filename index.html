@@ -3,41 +3,95 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>HSC SmartPrep BD | বাংলা প্রশ্নব্যাংক</title>
-<meta name="description" content="HSC SmartPrep BD — বাংলা MCQ ও HSC প্রস্তুতি">
+<meta name="theme-color" content="#087653">
+<title>HSC SmartPrep BD — স্মার্ট প্রস্তুতি</title>
+<meta name="description" content="বাংলায় অধ্যায়ভিত্তিক HSC MCQ, সৃজনশীল ও বোর্ড প্রশ্ন অনুশীলন।">
+
 <style>
+:root{--green:#087653;--dark:#104b39;--mint:#e8f7ef;--bg:#f5f8f6;--text:#19372d;--muted:#718078;--line:#e3ece6}
 *{box-sizing:border-box}
-body{margin:0;background:#f1f7f4;color:#18352b;font-family:Arial,sans-serif}
-header{background:#075940;color:white;padding:24px 16px;text-align:center}
-header h1{margin:0 0 8px;font-size:27px}
-header p{margin:0}
-main{max-width:850px;margin:20px auto;padding:0 14px}
-.panel{background:white;padding:18px;border-radius:16px;margin-bottom:16px;box-shadow:0 3px 14px #0000000c}
-label{display:block;font-weight:bold;margin:12px 0 6px}
-select,button{width:100%;padding:12px;border-radius:9px;border:1px solid #ccdcd3;font-size:16px}
-button{background:#075940;color:white;border:0;font-weight:bold;margin-top:12px}
-button.secondary{background:#e3f2e9;color:#075940}
-.question{padding:14px 0;border-bottom:1px solid #e2eae5}
-.options{display:grid;gap:8px;margin-top:10px}
-.option{padding:10px;background:#f2f7f4;border-radius:8px}
-.answer{color:#087443;font-weight:bold;margin-top:8px}
-.small{color:#63776d;font-size:14px}
-footer{text-align:center;padding:25px;color:#63776d}
+body{margin:0;background:var(--bg);color:var(--text);font-family:system-ui,"Noto Sans Bengali",sans-serif}
+header{background:linear-gradient(130deg,#07583e,#11976a);color:white;padding:22px 17px 28px;border-radius:0 0 25px 25px}
+.top{max-width:1050px;margin:auto}
+.brand{font-size:13px;letter-spacing:1px;font-weight:800;opacity:.9}
+header h1{font-size:29px;margin:13px 0 7px}
+header p{margin:0;line-height:1.8;color:#e1fff0}
+.wrap{max-width:1050px;margin:0 auto;padding:17px}
+.search{width:100%;padding:14px;border:1px solid var(--line);border-radius:13px;font-size:16px;background:white;margin-bottom:16px}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:15px 0}
+.stat,.card,.panel{background:white;border:1px solid var(--line);border-radius:16px;padding:15px}
+.stat b{display:block;color:var(--green);font-size:21px}
+.stat span{font-size:12px;color:var(--muted)}
+h2{font-size:20px;margin:8px 0 14px}
+h3{font-size:16px;margin:9px 0}
+.subjects{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:11px}
+.card{cursor:pointer;text-align:left;color:var(--text);font:inherit;transition:.15s}
+.card:active{transform:scale(.98)}
+.emoji{font-size:27px}
+.card p{font-size:12px;color:var(--muted);margin:5px 0}
+.card strong{display:block;margin-top:8px}
+.tabs{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:6px;margin:18px 0}
+.tab{border:0;background:#e6eee9;border-radius:10px;padding:11px 4px;font-size:13px;font-weight:750;color:var(--dark)}
+.tab.active{background:var(--green);color:white}
+label{display:block;font-size:13px;font-weight:700;margin:12px 0 6px}
+select,textarea{width:100%;padding:12px;border:1px solid var(--line);border-radius:10px;background:white;font:inherit}
+button{cursor:pointer}
+.primary{background:var(--green);color:white;border:0;border-radius:10px;padding:11px 14px;font-weight:750}
+.question{padding:15px 0;border-bottom:1px solid var(--line);line-height:1.85}
+.qmeta{font-size:12px;color:var(--muted);margin-bottom:7px}
+.option{display:block;width:100%;text-align:left;margin:8px 0;padding:11px;border:1px solid var(--line);border-radius:10px;background:white;color:var(--text);font:inherit}
+.option.correct{border-color:#159765;background:#e4f8ed}
+.option.wrong{border-color:#d35d5d;background:#fff0f0}
+.feedback{font-size:13px;font-weight:700;margin-top:8px}
+.stimulus{background:#f1f7f3;padding:12px;border-radius:10px;margin:10px 0}
+.empty{padding:22px;text-align:center;color:var(--muted);line-height:1.8}
+.small{font-size:12px;color:var(--muted)}
+footer{text-align:center;padding:28px 15px;color:var(--muted);font-size:13px}
+[hidden]{display:none!important}
+@media(min-width:650px){.subjects{grid-template-columns:repeat(3,minmax(0,1fr))}header h1{font-size:36px}}
 </style>
 </head>
+
 <body>
 <header>
-<h1>HSC SmartPrep BD</h1>
-<p>বাংলায় পড়ো, অনুশীলন করো, প্রস্তুত হও!</p>
+<div class="top">
+<div class="brand">🎓 HSC SMARTPREP BD</div>
+<h1>স্মার্ট প্রস্তুতি, ভালো ফলাফল!</h1>
+<p>এক জায়গায় HSC-এর MCQ, সৃজনশীল ও বোর্ড প্রশ্ন।</p>
+</div>
 </header>
 
-<main>
-<section class="panel">
-<h2>📚 প্রশ্নব্যাংক</h2>
-<p id="status">প্রশ্ন লোড হচ্ছে...</p>
+<main class="wrap">
+<input id="search" class="search" placeholder="🔎 বিষয় বা অধ্যায় খুঁজুন..." aria-label="বিষয় বা অধ্যায় খুঁজুন">
 
-<label for="subject">বিষয় নির্বাচন করো</label>
-<select id="subject">
+<div class="stats">
+<div class="stat"><b id="total">—</b><span>MCQ প্রশ্ন</span></div>
+<div class="stat"><b id="cqtotal">—</b><span>সৃজনশীল প্রশ্ন</span></div>
+<div class="stat"><b id="boardtotal">—</b><span>বোর্ড প্রশ্ন</span></div>
+</div>
+
+<section>
+<h2>📚 তোমার বিষয় নির্বাচন করো</h2>
+<div class="subjects" id="subjects">
+<button class="card" data-subject="physics"><span class="emoji">⚛️</span><strong>পদার্থবিজ্ঞান</strong><p>Physics</p></button>
+<button class="card" data-subject="chemistry"><span class="emoji">🧪</span><strong>রসায়ন</strong><p>Chemistry</p></button>
+<button class="card" data-subject="biology"><span class="emoji">🌿</span><strong>জীববিজ্ঞান</strong><p>Biology</p></button>
+<button class="card" data-subject="higher-math"><span class="emoji">📐</span><strong>উচ্চতর গণিত</strong><p>Higher Mathematics</p></button>
+<button class="card" data-subject="ict"><span class="emoji">💻</span><strong>তথ্য ও যোগাযোগ প্রযুক্তি</strong><p>ICT</p></button>
+</div>
+</section>
+
+<section class="panel" style="margin-top:18px">
+<h2 id="sectionTitle">✍️ অনুশীলন শুরু করো</h2>
+<div class="tabs">
+<button class="tab active" data-mode="mcq">MCQ</button>
+<button class="tab" data-mode="cq">সৃজনশীল</button>
+<button class="tab" data-mode="board">বোর্ড</button>
+<button class="tab" data-mode="all">সব প্রশ্ন</button>
+</div>
+
+<label for="subjectSelect">বিষয়</label>
+<select id="subjectSelect">
 <option value="all">সকল বিষয়</option>
 <option value="physics">পদার্থবিজ্ঞান</option>
 <option value="chemistry">রসায়ন</option>
@@ -46,135 +100,196 @@ footer{text-align:center;padding:25px;color:#63776d}
 <option value="ict">তথ্য ও যোগাযোগ প্রযুক্তি</option>
 </select>
 
-<label for="chapter">অধ্যায় নির্বাচন করো</label>
-<select id="chapter">
-<option value="all">সকল অধ্যায়</option>
-</select>
-
-<button id="show">প্রশ্ন দেখাও</button>
-<button id="answers" class="secondary">উত্তর দেখাও</button>
-</section>
-
-<section class="panel">
-<h2>✍️ MCQ অনুশীলন</h2>
-<div id="questions">প্রশ্ন লোড হচ্ছে...</div>
-</section>
-
-<section class="panel">
-<h2>🎯 আমাদের লক্ষ্য</h2>
-<p>HSC শিক্ষার্থীদের জন্য বাংলা প্রশ্ন, অনুশীলন ও পরীক্ষার প্রস্তুতি।</p>
-<p class="small">নিয়মিত অনুশীলন করো এবং নিজের অগ্রগতি যাচাই করো।</p>
+<label for="chapterSelect">অধ্যায়</label>
+<select id="chapterSelect"><option value="all">সকল অধ্যায়</option></select>
+<div id="status" class="small" style="margin-top:12px">প্রশ্ন লোড হচ্ছে...</div>
+<div id="results"></div>
 </section>
 </main>
 
-<footer>© HSC SmartPrep BD | শিক্ষাই শক্তি</footer>
+<footer>© HSC SmartPrep BD · শেখো, অনুশীলন করো, এগিয়ে যাও।</footer>
 
 <script src="./questions.js"></script>
+<script src="./chapter-data.js"></script>
 <script>
 (function(){
-const status=document.getElementById("status");
-const output=document.getElementById("questions");
-const subjectSelect=document.getElementById("subject");
-const chapterSelect=document.getElementById("chapter");
-let showAnswers=false;
-
-const data=window.HSC_SMARTPREP_DATA;
-if(!data || !Array.isArray(data.mcqQuestions)){
- status.textContent="প্রশ্ন লোড হয়নি। questions.js ফাইলটি পরীক্ষা করতে হবে।";
- output.textContent="প্রশ্নের তথ্য পাওয়া যায়নি।";
- return;
-}
-
-const all=data.mcqQuestions;
+"use strict";
+const $=id=>document.getElementById(id);
+const status=$("status"),results=$("results");
+const subjectSelect=$("subjectSelect"),chapterSelect=$("chapterSelect");
 const subjectNames={
- physics:"পদার্থবিজ্ঞান",
- chemistry:"রসায়ন",
- biology:"জীববিজ্ঞান",
- "higher-math":"উচ্চতর গণিত",
- highermath:"উচ্চতর গণিত",
- math:"উচ্চতর গণিত",
+ physics:"পদার্থবিজ্ঞান",chemistry:"রসায়ন",biology:"জীববিজ্ঞান",
+ "higher-math":"উচ্চতর গণিত",highermath:"উচ্চতর গণিত",math:"উচ্চতর গণিত",
  ict:"তথ্য ও যোগাযোগ প্রযুক্তি"
 };
+let mode="mcq",selectedSubject="all",showAllAnswers=false;
 
-function getSubject(q){
- return String(q.subject || "").toLowerCase().replace(/[\s_]+/g,"-");
+function arr(x){return Array.isArray(x)?x:[]}
+function norm(s){return String(s||"").toLowerCase().replace(/[\s_]+/g,"-")}
+function subject(q){return norm(q.subject||q.subjectId||q.subjectName)}
+function chapter(q){return q.chapter||q.chapterName||q.topic||"অন্যান্য"}
+function matchSubject(q,s){
+ const id=subject(q);
+ return s==="all"||id===s||(s==="higher-math"&&["math","highermath"].includes(id));
 }
-function bnSubject(id){
- return subjectNames[id] || id;
+function findCreative(){
+ const d=window.HSC_SMARTPREP_DATA||{};
+ for(const [key,value] of Object.entries(d)){
+  if(!Array.isArray(value)||key==="mcqQuestions"||key==="boardQuestions")continue;
+  if(value.some(q=>q&&(q.stimulus||q.passage||q.questions&&Array.isArray(q.questions)&&!q.options)))
+   return value;
+ }
+ return arr(d.creativeQuestions||d.cqQuestions);
 }
-function updateChapters(){
- const s=subjectSelect.value;
- const qs=all.filter(q=>s==="all" || getSubject(q)===s ||
- (s==="higher-math" && ["highermath","math"].includes(getSubject(q))));
- const chapters=[...new Set(qs.map(q=>q.chapter).filter(Boolean))];
- chapterSelect.innerHTML='<option value="all">সকল অধ্যায়</option>';
- chapters.forEach(c=>{
-  const opt=document.createElement("option");
-  opt.value=c;opt.textContent=c;chapterSelect.appendChild(opt);
- });
+function getData(){
+ const d=window.HSC_SMARTPREP_DATA;
+ if(!d)return null;
+ return {
+  mcq:arr(d.mcqQuestions),
+  cq:findCreative(),
+  board:arr(d.boardQuestions)
+ };
+}
+function make(tag,cls,txt){
+ const e=document.createElement(tag);
+ if(cls)e.className=cls;
+ if(txt!==undefined)e.textContent=txt;
+ return e;
+}
+function updateStats(d){
+ $("total").textContent=d.mcq.length;
+ $("cqtotal").textContent=d.cq.length;
+ $("boardtotal").textContent=d.board.length;
+}
+function currentList(d){
+ if(mode==="mcq")return d.mcq;
+ if(mode==="cq")return d.cq;
+ if(mode==="board")return d.board;
+ return [...d.mcq,...d.cq,...d.board];
+}
+function updateChapters(d){
+ const list=currentList(d).filter(q=>matchSubject(q,subjectSelect.value));
+ const old=chapterSelect.value;
+ const names=[...new Set(list.map(chapter))];
+ chapterSelect.replaceChildren();
+ chapterSelect.add(new Option("সকল অধ্যায়","all"));
+ names.forEach(c=>chapterSelect.add(new Option(c,c)));
+ if(names.includes(old))chapterSelect.value=old;
 }
 function render(){
- const s=subjectSelect.value;
- const c=chapterSelect.value;
- const qs=all.filter(q=>{
-  const id=getSubject(q);
-  const subjectMatch=s==="all" || id===s ||
-    (s==="higher-math" && ["highermath","math"].includes(id));
-  return subjectMatch && (c==="all" || q.chapter===c);
- });
- output.innerHTML="";
- if(!qs.length){
-  output.textContent="এই নির্বাচনে কোনো MCQ পাওয়া যায়নি।";
+ const d=getData();
+ if(!d){
+  status.textContent="প্রশ্নের ফাইল লোড হয়নি। questions.js ঠিকভাবে প্রকাশিত হয়েছে কি না পরীক্ষা করো।";
+  results.replaceChildren(make("div","empty","প্রশ্নের তথ্য পাওয়া যায়নি।"));
   return;
  }
- qs.forEach((q,i)=>{
-  const card=document.createElement("div");
-  card.className="question";
-  const title=document.createElement("strong");
-  title.textContent=(i+1)+". "+(q.question || "প্রশ্ন পাওয়া যায়নি");
-  card.appendChild(title);
-  if(q.chapter){
-   const chapter=document.createElement("p");
-   chapter.className="small";
-   chapter.textContent="অধ্যায়: "+q.chapter;
-   card.appendChild(chapter);
+ updateStats(d);
+ const list=currentList(d).filter(q=>
+  matchSubject(q,subjectSelect.value)&&
+  (chapterSelect.value==="all"||chapter(q)===chapterSelect.value)
+ );
+ const term=$("search").value.trim().toLowerCase();
+ const filtered=list.filter(q=>JSON.stringify(q).toLowerCase().includes(term));
+ status.textContent="এই বিভাগে "+filtered.length+"টি প্রশ্ন পাওয়া গেছে।";
+ results.replaceChildren();
+ if(!filtered.length){
+  results.appendChild(make("div","empty",
+   "এই বিভাগে প্রশ্ন পাওয়া যায়নি। অন্য বিষয় বা অধ্যায় নির্বাচন করো।\n\nনোট: CQ ও বোর্ড প্রশ্ন দেখাতে questions.js-এ সেই প্রশ্নগুলো থাকা দরকার।"));
+  return;
+ }
+ filtered.forEach((q,i)=>{
+  const card=make("article","question");
+  card.appendChild(make("div","qmeta",
+   (subjectNames[subject(q)]||q.subjectName||"HSC")+
+   " · অধ্যায়: "+chapter(q)));
+  const prompt=q.question||q.text||q.title||q.stimulus||q.passage||"প্রশ্নের বিবরণ";
+  card.appendChild(make("h3",(i+1)+". "+prompt));
+  if(q.stimulus||q.passage){
+   card.appendChild(make("div","stimulus","উদ্দীপক: "+(q.stimulus||q.passage)));
   }
-  const opts=document.createElement("div");
-  opts.className="options";
-  (q.options || []).forEach((op,j)=>{
-   const item=document.createElement("div");
-   item.className="option";
-   item.textContent=String.fromCharCode(2453+j)+". "+op;
-   opts.appendChild(item);
-  });
-  card.appendChild(opts);
-  if(showAnswers){
-   const ans=document.createElement("div");
-   ans.className="answer";
-   const index=Number(q.answer);
-   const correct=(q.options || [])[index];
-   ans.textContent="সঠিক উত্তর: "+(correct===undefined ? String(q.answer ?? "উপলভ্য নয়") : correct);
-   card.appendChild(ans);
-   if(q.explanation){
-    const exp=document.createElement("p");
-    exp.textContent="ব্যাখ্যা: "+q.explanation;
-    card.appendChild(exp);
-   }
+  const opts=arr(q.options);
+  if(opts.length){
+   const answer=Number(q.answer);
+   const feedback=make("div","feedback","");
+   opts.forEach((op,j)=>{
+    const b=make("button","option",String.fromCharCode(2453+j)+". "+(typeof op==="object"?(op.text||op.label||JSON.stringify(op)):op));
+    b.addEventListener("click",()=>{
+     card.querySelectorAll(".option").forEach(x=>x.classList.remove("correct","wrong"));
+     const correct=Number.isInteger(answer)&&answer>=0&&answer<opts.length?answer:
+       (Number.isInteger(answer-1)&&answer>0&&answer<=opts.length?answer-1:-1);
+     if(correct>=0){
+      card.querySelectorAll(".option")[correct].classList.add("correct");
+      if(j!==correct)b.classList.add("wrong");
+      feedback.textContent=j===correct?"সঠিক উত্তর! 🎉":"সঠিক উত্তরটি সবুজ রঙে দেখানো হয়েছে।";
+     }else feedback.textContent="এই প্রশ্নের সঠিক উত্তর তথ্য এখনো যোগ করা হয়নি।";
+    });
+    card.appendChild(b);
+   });
+   card.appendChild(feedback);
   }
-  output.appendChild(card);
+  if(q.questions&&Array.isArray(q.questions)){
+   q.questions.forEach((sub,j)=>{
+    const t=typeof sub==="object"?(sub.question||sub.text||JSON.stringify(sub)):sub;
+    card.appendChild(make("p","",["ক","খ","গ","ঘ"][j]?"("+["ক","খ","গ","ঘ"][j]+") "+t:t));
+   });
+  }
+  if(q.year||q.board){
+   card.appendChild(make("div","qmeta",
+    [q.board,q.year].filter(Boolean).join(" · ")));
+  }
+  if(mode==="cq"||mode==="board"||q.stimulus||q.passage){
+   const area=document.createElement("textarea");
+   area.rows=4;area.placeholder="এখানে নিজের উত্তর অনুশীলন করো...";
+   card.appendChild(area);
+  }
+  if(q.answerText||q.correctAnswer||q.explanation){
+   const btn=make("button","primary","উত্তর / ব্যাখ্যা দেখো");
+   const detail=make("p","",[
+    q.answerText?"উত্তর: "+q.answerText:"",
+    q.correctAnswer?"সঠিক উত্তর: "+q.correctAnswer:"",
+    q.explanation?"ব্যাখ্যা: "+q.explanation:""
+   ].filter(Boolean).join(" "));
+   detail.hidden=true;
+   btn.addEventListener("click",()=>{detail.hidden=!detail.hidden;});
+   card.append(btn,detail);
+  }
+  results.appendChild(card);
  });
 }
-subjectSelect.addEventListener("change",()=>{updateChapters();render()});
-chapterSelect.addEventListener("change",render);
-document.getElementById("show").addEventListener("click",render);
-document.getElementById("answers").addEventListener("click",()=>{
- showAnswers=!showAnswers;
- document.getElementById("answers").textContent=showAnswers?"উত্তর লুকাও":"উত্তর দেখাও";
- render();
+function refresh(){
+ const d=getData();
+ if(!d){
+  status.textContent="প্রশ্নের ফাইল লোড হয়নি।";
+  results.replaceChildren(make("div","empty","questions.js ফাইলের নাম, অবস্থান ও JavaScript syntax পরীক্ষা করতে হবে।"));
+  return;
+ }
+ updateChapters(d);render();
+}
+$("subjects").addEventListener("click",e=>{
+ const b=e.target.closest("[data-subject]");
+ if(!b)return;
+ subjectSelect.value=b.dataset.subject;
+ selectedSubject=b.dataset.subject;
+ $("sectionTitle").textContent=b.querySelector("strong").textContent+" — অনুশীলন";
+ refresh();
+ $("sectionTitle").scrollIntoView({behavior:"smooth",block:"start"});
 });
-status.textContent="মোট "+all.length+"টি MCQ পাওয়া গেছে।";
-updateChapters();
-render();
+document.querySelectorAll("[data-mode]").forEach(b=>b.addEventListener("click",()=>{
+ mode=b.dataset.mode;
+ document.querySelectorAll("[data-mode]").forEach(x=>x.classList.toggle("active",x===b));
+ $("sectionTitle").textContent=({mcq:"✍️ MCQ অনুশীলন",cq:"📝 সৃজনশীল প্রশ্ন",board:"🏆 বোর্ড প্রশ্ন",all:"📚 সকল প্রশ্ন"})[mode];
+ refresh();
+}));
+subjectSelect.addEventListener("change",refresh);
+chapterSelect.addEventListener("change",render);
+$("search").addEventListener("input",render);
+
+const d=getData();
+if(d){updateStats(d);refresh();}
+else{
+ status.textContent="প্রশ্ন লোড হচ্ছে না: questions.js ফাইল পরীক্ষা করা দরকার।";
+ results.replaceChildren(make("div","empty","প্রশ্নের ফাইল পাওয়া যায়নি অথবা তার JavaScript-এ ত্রুটি আছে।"));
+}
 })();
 </script>
 </body>
