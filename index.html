@@ -2,603 +2,762 @@
 <html lang="bn">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="HSC SmartPrep BD — অধ্যায়ভিত্তিক MCQ ও সৃজনশীল প্রশ্ন অনুশীলন।">
-  <title>HSC SmartPrep BD | অধ্যায়ভিত্তিক প্রস্তুতি</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#064e45">
+  <meta name="description" content="HSC SmartPrep BD — বাংলা MCQ, সৃজনশীল ও বোর্ড প্রশ্নের মাধ্যমে HSC প্রস্তুতি নাও অধ্যায়ভিত্তিকভাবে।">
+  <title>HSC SmartPrep BD | স্মার্ট HSC প্রস্তুতি</title>
 
   <style>
+    :root {
+      --green: #07594e;
+      --deep: #073f3a;
+      --mint: #e8f8f1;
+      --ink: #122d3d;
+      --muted: #647582;
+      --paper: #f5f9fc;
+      --white: #ffffff;
+      --border: #e0eaf0;
+      --shadow: 0 8px 28px rgba(14, 61, 67, .07);
+    }
+
     * { box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
 
     body {
       margin: 0;
-      font-family: Arial, "Noto Sans Bengali", sans-serif;
-      background: #f3f6fb;
-      color: #172033;
+      background: var(--paper);
+      color: var(--ink);
+      font-family: system-ui, -apple-system, "Noto Sans Bengali",
+                   "Nirmala UI", sans-serif;
       line-height: 1.65;
     }
 
-    header {
-      background: #155e45;
-      color: white;
-      text-align: center;
-      padding: 25px 15px;
+    button, select { font: inherit; }
+
+    button { cursor: pointer; }
+
+    a { color: inherit; text-decoration: none; }
+
+    .wrap {
+      width: min(1440px, 94%);
+      margin: auto;
     }
 
-    header h1 { margin: 0 0 5px; }
-    header p { margin: 0; }
+    header {
+      background: linear-gradient(110deg, #06473f, #07594e);
+      color: white;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      box-shadow: 0 3px 18px #002d2a22;
+    }
 
-    main {
-      max-width: 900px;
-      margin: auto;
-      padding: 16px;
+    .nav {
+      min-height: 76px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 18px;
+      padding: 10px 0;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      min-width: 0;
+    }
+
+    .logo {
+      width: 48px;
+      height: 48px;
+      display: grid;
+      place-items: center;
+      font-size: 35px;
+      flex-shrink: 0;
+    }
+
+    .brand-name {
+      font-size: clamp(18px, 2.5vw, 25px);
+      font-weight: 850;
+      line-height: 1.25;
+    }
+
+    .brand-sub {
+      font-size: 12px;
+      color: #c7eee0;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      flex-wrap: wrap;
+      font-size: 14px;
+    }
+
+    .nav-links a:hover { color: #86f4b5; }
+
+    .nav-button {
+      border: 1px solid #ffffff60;
+      border-radius: 24px;
+      padding: 8px 15px;
+      background: #ffffff10;
+      color: white;
+    }
+
+    .hero {
+      margin: 22px 0 18px;
+      min-height: 315px;
+      overflow: hidden;
+      border-radius: 24px;
+      padding: clamp(25px, 5vw, 60px);
+      position: relative;
+      background:
+        radial-gradient(ellipse at 83% 20%, #fff9c9 0, transparent 30%),
+        radial-gradient(ellipse at 78% 100%, #a6e9ce 0, transparent 38%),
+        linear-gradient(115deg, #e8fbf4 0%, #f4fbf8 55%, #d6f2e8 100%);
+      border: 1px solid #d7eee5;
+    }
+
+    .hero-content {
+      max-width: 650px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .eyebrow {
+      display: inline-block;
+      background: #d1f5e2;
+      color: #07594e;
+      border: 1px solid #b0e8ca;
+      padding: 5px 13px;
+      border-radius: 30px;
+      font-size: 13px;
+      font-weight: 750;
+    }
+
+    h1 {
+      font-size: clamp(30px, 5vw, 53px);
+      line-height: 1.25;
+      margin: 15px 0;
+      letter-spacing: -.8px;
+    }
+
+    .hero p {
+      color: #415d67;
+      max-width: 540px;
+      font-size: 16px;
+    }
+
+    .hero-art {
+      position: absolute;
+      right: 3%;
+      bottom: 10px;
+      width: 37%;
+      height: 90%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      pointer-events: none;
+    }
+
+    .art-cap { font-size: clamp(45px, 7vw, 90px); }
+
+    .book {
+      width: 88%;
+      text-align: center;
+      padding: 5px 8px;
+      margin: 3px 0;
+      color: white;
+      font-weight: 800;
+      border-radius: 6px 13px 13px 6px;
+      box-shadow: 0 4px 0 #00000013, 0 8px 15px #153d3820;
+      transform: perspective(200px) rotateY(-5deg);
+    }
+
+    .book:nth-child(2) { background: #2679dc; }
+    .book:nth-child(3) { background: #ed792c; }
+    .book:nth-child(4) { background: #16976a; }
+    .book:nth-child(5) { background: #7851c7; }
+    .book:nth-child(6) { background: #087e8b; }
+
+    .actions {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-top: 24px;
+    }
+
+    .btn {
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      gap: 8px;
+      border-radius: 28px;
+      padding: 12px 20px;
+      border: 1px solid transparent;
+      font-weight: 750;
+      transition: transform .15s, box-shadow .15s;
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+      box-shadow: var(--shadow);
+    }
+
+    .btn-primary {
+      background: var(--green);
+      color: white;
+    }
+
+    .btn-outline {
+      border-color: #9bc9bc;
+      background: #ffffffc9;
+      color: var(--deep);
+    }
+
+    .section {
+      margin: 24px 0;
+      padding: clamp(16px, 2.5vw, 28px);
+      border: 1px solid var(--border);
+      background: white;
+      border-radius: 22px;
+      box-shadow: var(--shadow);
+    }
+
+    .section-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 20px;
+    }
+
+    .section h2 {
+      margin: 0;
+      font-size: clamp(22px, 3vw, 30px);
+    }
+
+    .section-sub {
+      margin: 4px 0 0;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .subject-grid {
+      display: grid;
+      grid-template-columns: repeat(5, minmax(0, 1fr));
+      gap: 14px;
+    }
+
+    .subject-card {
+      --accent: #287cdb;
+      --tint: #eaf4ff;
+      display: flex;
+      flex-direction: column;
+      min-width: 0;
+      padding: 17px;
+      border: 1px solid color-mix(in srgb, var(--accent) 25%, white);
+      border-radius: 16px;
+      background: linear-gradient(145deg, var(--tint), white);
+      transition: transform .18s, box-shadow .18s;
+    }
+
+    .subject-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 26px #183d4b12;
+    }
+
+    .subject-top {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 12px;
+    }
+
+    .subject-icon {
+      width: 48px;
+      height: 48px;
+      flex-shrink: 0;
+      display: grid;
+      place-items: center;
+      border-radius: 50%;
+      background: var(--accent);
+      color: white;
+      font-size: 24px;
+    }
+
+    .subject-card h3 {
+      font-size: 17px;
+      margin: 0;
+      line-height: 1.45;
+    }
+
+    .subject-card p {
+      color: #536876;
+      font-size: 13px;
+      flex: 1;
+      margin: 0 0 15px;
+    }
+
+    .subject-card .btn {
+      width: 100%;
+      background: var(--accent);
+      color: white;
+      padding: 9px 12px;
+      border-radius: 11px;
+      font-size: 14px;
+    }
+
+    .features {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 12px;
+      margin: 24px 0;
+    }
+
+    .feature {
+      padding: 19px 14px;
+      border: 1px solid var(--border);
+      background: white;
+      border-radius: 16px;
+      text-align: center;
+    }
+
+    .feature-icon {
+      font-size: 27px;
+      margin-bottom: 6px;
+    }
+
+    .feature strong { display: block; }
+
+    .feature span {
+      font-size: 13px;
+      color: var(--muted);
+    }
+
+    .practice {
+      scroll-margin-top: 95px;
+    }
+
+    .controls {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 12px;
+      margin: 18px 0;
+    }
+
+    .controls label {
+      display: block;
+      font-weight: 700;
+      font-size: 14px;
+      margin-bottom: 5px;
+    }
+
+    select {
+      width: 100%;
+      min-height: 46px;
+      padding: 10px;
+      border-radius: 11px;
+      border: 1px solid #d4e1e8;
+      color: var(--ink);
+      background: white;
     }
 
     .tabs {
       display: flex;
       flex-wrap: wrap;
       gap: 8px;
-      margin-bottom: 16px;
+      margin: 16px 0;
     }
 
-    button, select {
-      font: inherit;
-      border-radius: 8px;
-      padding: 10px 13px;
+    .tab {
+      padding: 10px 16px;
+      border: 1px solid #d8e5eb;
+      background: #f5f9fb;
+      border-radius: 24px;
+      color: #435e69;
+      font-weight: 750;
     }
 
-    button {
-      cursor: pointer;
-      border: 1px solid #155e45;
-      background: white;
-      color: #155e45;
-    }
-
-    button.active, button.primary {
-      background: #155e45;
+    .tab.active {
+      background: var(--green);
+      border-color: var(--green);
       color: white;
     }
 
-    select {
-      width: 100%;
-      border: 1px solid #ccd5df;
-      background: white;
-      margin-bottom: 12px;
-      color: #172033;
-    }
-
-    .card {
-      background: white;
-      padding: 16px;
-      margin: 13px 0;
-      border: 1px solid #e0e6ef;
-      border-radius: 12px;
-      overflow-wrap: anywhere;
-    }
-
-    .card h3 { margin-top: 0; }
-
-    .option {
-      display: block;
-      padding: 9px 11px;
-      margin: 8px 0;
-      border-radius: 8px;
-      background: #f3f6fb;
-      cursor: pointer;
-    }
-
-    .option input { margin-right: 8px; }
-
-    .answer {
-      color: #155e45;
-      font-weight: bold;
-    }
-
-    .muted { color: #667085; }
-
-    .notice {
-      padding: 13px;
-      background: #fff3cd;
-      border-radius: 8px;
+    .question-card {
+      border: 1px solid var(--border);
+      background: #fff;
+      border-radius: 15px;
+      padding: 18px;
       margin: 12px 0;
       overflow-wrap: anywhere;
     }
 
-    .error {
-      padding: 13px;
-      background: #ffe8e8;
-      color: #a11919;
-      border-radius: 8px;
-      overflow-wrap: anywhere;
+    .question-meta {
+      color: #078064;
+      font-size: 12px;
+      font-weight: 800;
+      margin-bottom: 8px;
+    }
+
+    .question-title {
+      font-weight: 750;
+      margin: 0 0 12px;
+    }
+
+    .option {
+      display: block;
+      padding: 9px 11px;
+      margin: 7px 0;
+      border: 1px solid #e2eaf0;
+      background: #f8fbfd;
+      border-radius: 9px;
+    }
+
+    .answer {
+      display: none;
+      padding: 11px;
+      margin-top: 10px;
+      border-radius: 9px;
+      background: #e9f8ef;
+      color: #12583d;
+    }
+
+    .answer.show { display: block; }
+
+    .small-btn {
+      margin-top: 10px;
+      padding: 8px 13px;
+      background: white;
+      color: var(--green);
+      border: 1px solid #8fc9b4;
+      border-radius: 9px;
+      font-weight: 700;
+    }
+
+    .empty {
+      padding: 28px 18px;
+      text-align: center;
+      color: var(--muted);
+      border: 1px dashed #bfd3dc;
+      border-radius: 14px;
+      background: #f9fcfd;
+    }
+
+    .motivation {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      min-height: 125px;
+      margin: 24px 0;
+      border-radius: 18px;
+      padding: 22px;
+      background: linear-gradient(110deg, #d7f2e6, #fff6df);
+      color: #14554b;
+      font-size: clamp(18px, 3vw, 25px);
+      font-weight: 850;
     }
 
     footer {
-      text-align: center;
-      padding: 22px 12px;
-      color: #667085;
+      background: #073f3a;
+      color: #e3f4ee;
+      margin-top: 30px;
+      padding: 30px 0;
+    }
+
+    .footer-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+
+    footer p {
+      color: #c1ddd4;
+      margin: 5px 0;
+      font-size: 13px;
+    }
+
+    footer a { text-decoration: underline; }
+
+    @media (max-width: 1000px) {
+      .subject-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+      .nav-links { gap: 12px; }
+      .hero-art { opacity: .55; right: 0; width: 42%; }
+      .hero-content { max-width: 65%; }
+    }
+
+    @media (max-width: 650px) {
+      .wrap { width: 93%; }
+      .nav { min-height: 65px; }
+      .logo { width: 38px; font-size: 29px; }
+      .brand-sub { font-size: 10px; }
+      .nav-links { gap: 7px; font-size: 12px; }
+      .nav-links a { padding: 4px; }
+      .nav-button { padding: 5px 9px; }
+      .hero { padding: 25px 19px; min-height: 340px; }
+      .hero-content { max-width: 100%; }
+      .hero-art { opacity: .13; width: 75%; right: -12%; }
+      .hero p { font-size: 14px; }
+      .actions { gap: 8px; }
+      .btn { padding: 10px 13px; font-size: 13px; }
+      .subject-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; }
+      .subject-card { padding: 12px; }
+      .subject-icon { width: 40px; height: 40px; font-size: 20px; }
+      .subject-card h3 { font-size: 15px; }
+      .subject-card p { font-size: 12px; }
+      .features { grid-template-columns: repeat(2, 1fr); }
+      .controls { grid-template-columns: 1fr; }
+      .section-head { align-items: flex-start; }
+      .section { padding: 15px; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *, *::before, *::after { transition: none !important; }
     }
   </style>
 </head>
 
 <body>
   <header>
-    <h1>HSC SmartPrep BD</h1>
-    <p>অধ্যায়ভিত্তিক প্রস্তুতি — প্রতিদিন একটু এগিয়ে যাও</p>
+    <div class="wrap nav">
+      <a class="brand" href="#home" aria-label="HSC SmartPrep BD হোম">
+        <span class="logo">📖</span>
+        <span>
+          <span class="brand-name">HSC SmartPrep BD</span>
+          <span class="brand-sub" style="display:block">স্মার্ট প্রস্তুতি, নিশ্চিত অগ্রগতি</span>
+        </span>
+      </a>
+
+      <nav class="nav-links" aria-label="প্রধান মেনু">
+        <a href="#home">⌂ হোম</a>
+        <a href="#subjects">📚 বিষয়সমূহ</a>
+        <a href="#practice">✍️ অনুশীলন</a>
+        <a href="#about">আমাদের সম্পর্কে</a>
+        <a class="nav-button" href="https://github.com/hsc-smartprep-bd/hscsmartprep" target="_blank" rel="noopener">GitHub ↗</a>
+      </nav>
+    </div>
   </header>
 
-  <main>
-    <h2>প্রশ্ন অনুশীলন</h2>
+  <main class="wrap" id="home">
+    <section class="hero">
+      <div class="hero-content">
+        <span class="eyebrow">🎓 HSC প্রস্তুতির স্মার্ট সঙ্গী</span>
+        <h1>HSC SmartPrep BD-তে<br>স্বাগতম!</h1>
+        <p>
+          অধ্যায়ভিত্তিক MCQ, সৃজনশীল ও বোর্ড প্রশ্নের মাধ্যমে
+          তোমার HSC প্রস্তুতিকে করো আরও সহজ, গোছানো ও কার্যকর।
+        </p>
+        <div class="actions">
+          <a class="btn btn-primary" href="#practice">▶ এখনই অনুশীলন শুরু করো</a>
+          <a class="btn btn-outline" href="#subjects">📚 বিষয় বেছে নাও</a>
+        </div>
+      </div>
 
-    <div class="tabs">
-      <button type="button" class="active" data-tab="mcq">MCQ</button>
-      <button type="button" data-tab="creative">সৃজনশীল</button>
-      <button type="button" data-tab="board">বোর্ড প্রশ্ন</button>
-    </div>
+      <div class="hero-art" aria-hidden="true">
+        <div class="art-cap">🎓</div>
+        <div class="book">Physics</div>
+        <div class="book">Chemistry</div>
+        <div class="book">Biology</div>
+        <div class="book">Higher Math</div>
+        <div class="book">ICT</div>
+      </div>
+    </section>
 
-    <label for="subjectFilter">বিষয় নির্বাচন করো</label>
-    <select id="subjectFilter">
-      <option value="">সব বিষয়</option>
-    </select>
+    <section class="section" id="subjects">
+      <div class="section-head">
+        <div>
+          <h2>📚 বিষয় নির্বাচন করো</h2>
+          <p class="section-sub">পছন্দের বিষয় বেছে নিয়ে অনুশীলন শুরু করো।</p>
+        </div>
+        <span class="eyebrow">৫টি বিষয়</span>
+      </div>
 
-    <label for="chapterFilter">অধ্যায় নির্বাচন করো</label>
-    <select id="chapterFilter">
-      <option value="">সব অধ্যায়</option>
-    </select>
+      <div class="subject-grid">
+        <article class="subject-card" style="--accent:#287cdb;--tint:#eaf4ff">
+          <div class="subject-top">
+            <span class="subject-icon">⚛️</span>
+            <h3>পদার্থবিজ্ঞান</h3>
+          </div>
+          <p>সূত্র, ধারণা ও অধ্যায়ভিত্তিক প্রশ্নে নিজের দক্ষতা বাড়াও।</p>
+          <button class="btn" onclick="chooseSubject('physics')">প্রশ্ন অনুশীলন →</button>
+        </article>
 
-    <p id="status" class="muted" role="status">
-      প্রশ্ন লোড হচ্ছে...
-    </p>
+        <article class="subject-card" style="--accent:#ed792c;--tint:#fff0e5">
+          <div class="subject-top">
+            <span class="subject-icon">⚗️</span>
+            <h3>রসায়ন</h3>
+          </div>
+          <p>বিক্রিয়া, গণনা ও গুরুত্বপূর্ণ ধারণা অনুশীলন করো।</p>
+          <button class="btn" onclick="chooseSubject('chemistry')">প্রশ্ন অনুশীলন →</button>
+        </article>
 
-    <section id="questions"></section>
+        <article class="subject-card" style="--accent:#15966a;--tint:#e7f9ed">
+          <div class="subject-top">
+            <span class="subject-icon">🌿</span>
+            <h3>জীববিজ্ঞান</h3>
+          </div>
+          <p>জীববিজ্ঞানের বিষয়গুলো বুঝে বুঝে আয়ত্ত করো।</p>
+          <button class="btn" onclick="chooseSubject('biology')">প্রশ্ন অনুশীলন →</button>
+        </article>
+
+        <article class="subject-card" style="--accent:#7650c7;--tint:#f0eaff">
+          <div class="subject-top">
+            <span class="subject-icon">📈</span>
+            <h3>উচ্চতর গণিত</h3>
+          </div>
+          <p>গাণিতিক ধারণা ও সমস্যা সমাধানে অনুশীলন করো।</p>
+          <button class="btn" onclick="chooseSubject('math')">প্রশ্ন অনুশীলন →</button>
+        </article>
+
+        <article class="subject-card" style="--accent:#087e8b;--tint:#e4f8f8">
+          <div class="subject-top">
+            <span class="subject-icon">💻</span>
+            <h3>তথ্য ও যোগাযোগ প্রযুক্তি</h3>
+          </div>
+          <p>ICT-এর গুরুত্বপূর্ণ ধারণা ও MCQ অনুশীলন করো।</p>
+          <button class="btn" onclick="chooseSubject('ict')">প্রশ্ন অনুশীলন →</button>
+        </article>
+      </div>
+    </section>
+
+    <section class="features" aria-label="ওয়েবসাইটের সুবিধা">
+      <div class="feature">
+        <div class="feature-icon">🎯</div>
+        <strong>অধ্যায়ভিত্তিক প্রশ্ন</strong>
+        <span>গুছিয়ে অনুশীলন</span>
+      </div>
+      <div class="feature">
+        <div class="feature-icon">📝</div>
+        <strong>MCQ ও সৃজনশীল</strong>
+        <span>প্রস্তুতির বিভিন্ন ধরন</span>
+      </div>
+      <div class="feature">
+        <div class="feature-icon">📱</div>
+        <strong>মোবাইল উপযোগী</strong>
+        <span>ফোন থেকেই পড়াশোনা</span>
+      </div>
+      <div class="feature">
+        <div class="feature-icon">🌱</div>
+        <strong>নিয়মিত অনুশীলন</strong>
+        <span>প্রতিদিন একটু এগিয়ে যাও</span>
+      </div>
+    </section>
+
+    <section class="section practice" id="practice">
+      <div class="section-head">
+        <div>
+          <h2>✍️ প্রশ্ন অনুশীলন</h2>
+          <p class="section-sub">বিষয়, প্রশ্নের ধরন ও অধ্যায় নির্বাচন করো।</p>
+        </div>
+      </div>
+
+      <div class="tabs" role="group" aria-label="প্রশ্নের ধরন">
+        <button class="tab active" data-kind="mcq" onclick="setKind('mcq')">MCQ</button>
+        <button class="tab" data-kind="creative" onclick="setKind('creative')">সৃজনশীল</button>
+        <button class="tab" data-kind="board" onclick="setKind('board')">বোর্ড প্রশ্ন</button>
+      </div>
+
+      <div class="controls">
+        <div>
+          <label for="subjectSelect">বিষয়</label>
+          <select id="subjectSelect" onchange="updateChapters();renderQuestions()">
+            <option value="all">সব বিষয়</option>
+          </select>
+        </div>
+        <div>
+          <label for="chapterSelect">অধ্যায়</label>
+          <select id="chapterSelect" onchange="renderQuestions()">
+            <option value="all">সব অধ্যায়</option>
+          </select>
+        </div>
+        <div>
+          <label for="searchInput">প্রশ্ন খুঁজুন</label>
+          <input id="searchInput" type="search" placeholder="প্রশ্ন বা অধ্যায়ের নাম..." oninput="renderQuestions()"
+            style="width:100%;min-height:46px;padding:10px;border:1px solid #d4e1e8;border-radius:11px">
+        </div>
+      </div>
+
+      <p id="questionCount" class="section-sub" aria-live="polite"></p>
+      <div id="questionList">
+        <div class="empty">প্রশ্ন লোড হচ্ছে...</div>
+      </div>
+    </section>
+
+    <section class="motivation" id="about">
+      “আজকের ছোট্ট অনুশীলনই আগামী দিনের বড় সাফল্য।” 🌱
+    </section>
   </main>
 
   <footer>
-    © HSC SmartPrep BD
+    <div class="wrap footer-inner">
+      <div>
+        <strong>📖 HSC SmartPrep BD</strong>
+        <p>HSC প্রস্তুতিতে তোমার পাশে।</p>
+      </div>
+      <div>
+        <a href="#home">হোম</a> ·
+        <a href="#subjects">বিষয়সমূহ</a> ·
+        <a href="#practice">অনুশীলন</a> ·
+        <a href="https://github.com/hsc-smartprep-bd/hscsmartprep" target="_blank" rel="noopener">GitHub</a>
+        <p>© <span id="year"></span> HSC SmartPrep BD</p>
+      </div>
+    </div>
   </footer>
 
-  <!-- প্রথমে পুরোনো প্রশ্নব্যাংক লোড হবে -->
+  <!-- Keep your existing question files -->
   <script src="./questions.js?v=6"></script>
-
-  <!-- এরপর অতিরিক্ত অধ্যায়ভিত্তিক প্রশ্ন যোগ হবে -->
   <script src="./chapter-data.js?v=1"></script>
 
   <script>
-  (() => {
-    "use strict";
+    document.getElementById("year").textContent = new Date().getFullYear();
 
-    const status = document.getElementById("status");
-    const output = document.getElementById("questions");
-    const subjectFilter = document.getElementById("subjectFilter");
-    const chapterFilter = document.getElementById("chapterFilter");
-    const tabButtons = [...document.querySelectorAll("[data-tab]")];
+    let currentKind = "mcq";
+    let questionData = {};
+    let subjectItems = [];
 
-    const data = window.HSC_SMARTPREP_DATA;
-    let currentTab = "mcq";
-
-    function array(value) {
-      return Array.isArray(value) ? value : [];
-    }
-
-    function str(value) {
-      if (value === null || value === undefined) return "";
-      if (typeof value === "string" || typeof value === "number") {
-        return String(value);
-      }
-      return "";
-    }
-
-    function addText(parent, tag, value) {
-      const el = document.createElement(tag);
-      el.textContent = str(value);
-      parent.appendChild(el);
-      return el;
-    }
-
-    function getSubjectValue(item) {
-      if (typeof item === "string") return item;
-      return str(item && (
-        item.id || item.value || item.name ||
-        item.subject || item.title
-      ));
-    }
-
-    function getSubjectLabel(item) {
-      if (typeof item === "string") return item;
-      return str(item && (
-        item.name || item.title || item.label ||
-        item.subject || item.id
-      ));
+    function getData() {
+      return window.HSC_SMARTPREP_DATA || {};
     }
 
     function normalize(value) {
-      return str(value).trim().toLowerCase();
+      return String(value ?? "").toLowerCase().replace(/[\s_-]+/g, "").trim();
     }
 
-    function sameSubject(a, b) {
-      return normalize(a) === normalize(b);
+    function getSubjectId(item) {
+      if (item == null) return "";
+      if (typeof item !== "object") return String(item);
+      return String(item.id ?? item.value ?? item.slug ?? item.name ?? item.title ?? "");
     }
 
-    function getMCQs() {
-      return array(data.mcqQuestions);
-    }
-
-    function getCreative() {
-      if (Array.isArray(data.creativeQuestions)) {
-        return data.creativeQuestions;
+    function getSubjectName(id) {
+      const found = subjectItems.find(s => normalize(getSubjectId(s)) === normalize(id));
+      if (found && typeof found === "object") {
+        return String(found.label ?? found.title ?? found.name ?? found.bn ?? found.id ?? id);
       }
 
-      // পুরোনো ডেটায় সৃজনশীল প্রশ্ন অন্য অ্যারেতে থাকলে শনাক্ত করার চেষ্টা।
-      const found = [];
-      Object.keys(data).forEach(key => {
-        if (!Array.isArray(data[key])) return;
+      const names = {
+        physics: "পদার্থবিজ্ঞান",
+        chemistry: "রসায়ন",
+        biology: "জীববিজ্ঞান",
+        math: "উচ্চতর গণিত",
+        "higher-math": "উচ্চতর গণিত",
+        highermath: "উচ্চতর গণিত",
+        ict: "তথ্য ও যোগাযোগ প্রযুক্তি"
+      };
 
-        data[key].forEach(item => {
-          if (
-            item &&
-            typeof item === "object" &&
-            Array.isArray(item.questions) &&
-            item.stimulus !== undefined &&
-            !found.includes(item)
-          ) {
-            found.push(item);
-          }
-        });
-      });
-
-      return found;
+      return names[normalize(id)] || String(id || "অন্যান্য");
     }
 
-    function getBoard() {
-      return array(data.boardQuestions);
-    }
-
-    function currentItems() {
-      if (currentTab === "mcq") return getMCQs();
-      if (currentTab === "creative") return getCreative();
-      return getBoard();
-    }
-
-    function fillSubjects() {
-      const subjects = array(data.subjects);
-      const seen = new Set();
-
-      subjects.forEach(subject => {
-        const value = getSubjectValue(subject);
-        const label = getSubjectLabel(subject);
-
-        if (!value || seen.has(normalize(value))) return;
-        seen.add(normalize(value));
-
-        const option = document.createElement("option");
-        option.value = value;
-        option.textContent = label || value;
-        subjectFilter.appendChild(option);
-      });
-
-      // কোনো বিষয় তালিকায় না থাকলেও প্রশ্নের subject থেকে বিষয় তৈরি।
-      [...getMCQs(), ...getCreative(), ...getBoard()].forEach(item => {
-        const value = str(item && item.subject);
-        if (!value || seen.has(normalize(value))) return;
-
-        seen.add(normalize(value));
-        const option = document.createElement("option");
-        option.value = value;
-        option.textContent = value;
-        subjectFilter.appendChild(option);
-      });
-    }
-
-    function getFilteredItems() {
-      const subject = subjectFilter.value;
-      const chapter = chapterFilter.value;
-
-      return currentItems().filter(item => {
-        if (!item || typeof item !== "object") return false;
-
-        const subjectMatch =
-          !subject || sameSubject(item.subject, subject);
-
-        const chapterMatch =
-          !chapter || str(item.chapter) === chapter;
-
-        return subjectMatch && chapterMatch;
-      });
-    }
-
-    function updateChapters() {
-      const oldChapter = chapterFilter.value;
-      const subject = subjectFilter.value;
-
-      const chapters = [
-        ...new Set(
-          currentItems()
-            .filter(item =>
-              item &&
-              (!subject || sameSubject(item.subject, subject))
-            )
-            .map(item => str(item.chapter).trim())
-            .filter(Boolean)
-        )
-      ];
-
-      chapterFilter.replaceChildren();
-
-      const all = document.createElement("option");
-      all.value = "";
-      all.textContent = "সব অধ্যায়";
-      chapterFilter.appendChild(all);
-
-      chapters.forEach(chapter => {
-        const option = document.createElement("option");
-        option.value = chapter;
-        option.textContent = chapter;
-        chapterFilter.appendChild(option);
-      });
-
-      if (chapters.includes(oldChapter)) {
-        chapterFilter.value = oldChapter;
-      }
-    }
-
-    function getOptions(item) {
-      let options = item.options || item.choices || item.answers;
-
-      if (Array.isArray(options)) return options;
-
-      if (options && typeof options === "object") {
-        return Object.entries(options).map(([key, value]) => ({
-          label: key,
-          text: value,
-          value: key
-        }));
-      }
-
-      const keys = ["ক", "খ", "গ", "ঘ"];
-      const result = keys
-        .map((key, index) => ({
-          label: key,
-          text: item[key] ?? item["option" + (index + 1)],
-          value: key
-        }))
-        .filter(option => option.text !== undefined);
-
-      return result;
-    }
-
-    function optionText(option) {
-      if (option && typeof option === "object") {
-        return str(option.text ?? option.label ?? option.value);
-      }
-      return str(option);
-    }
-
-    function renderMCQ(items) {
-      items.forEach((item, index) => {
-        const card = document.createElement("article");
-        card.className = "card";
-
-        addText(
-          card, "h3",
-          (index + 1) + ". " +
-          (item.question || item.questionText || item.text || "প্রশ্ন")
-        );
-
-        if (item.chapter) {
-          addText(card, "p", "অধ্যায়: " + item.chapter);
-        }
-
-        const options = getOptions(item);
-
-        options.forEach((option, optionIndex) => {
-          const label = document.createElement("label");
-          label.className = "option";
-
-          const radio = document.createElement("input");
-          radio.type = "radio";
-          radio.name = "mcq-" + index;
-          radio.value = String(optionIndex);
-
-          label.appendChild(radio);
-          label.appendChild(
-            document.createTextNode(
-              option && typeof option === "object" && option.label
-                ? str(option.label) + ". " + optionText(option)
-                : optionText(option)
-            )
-          );
-
-          card.appendChild(label);
-        });
-
-        const answer = item.answer ??
-          item.correctAnswer ??
-          item.correctOption ??
-          item.correct;
-
-        if (answer !== undefined) {
-          const button = document.createElement("button");
-          button.type = "button";
-          button.textContent = "উত্তর যাচাই করো";
-
-          button.addEventListener("click", () => {
-            const chosen = card.querySelector('input[type="radio"]:checked');
-            let resultText;
-
-            if (!chosen) {
-              resultText = "প্রথমে একটি উত্তর নির্বাচন করো।";
-            } else {
-              const selectedIndex = Number(chosen.value);
-              const correctIndex = Number(answer);
-              const correctOption = options[selectedIndex];
-
-              const correct =
-                (Number.isInteger(correctIndex) &&
-                 String(answer).trim() !== "" &&
-                 selectedIndex === correctIndex) ||
-                str(answer) === str(correctOption && correctOption.value) ||
-                str(answer) === optionText(correctOption) ||
-                str(answer) === str(selectedIndex);
-
-              resultText = correct
-                ? "সঠিক উত্তর! 🎉"
-                : "সঠিক উত্তর: " + (
-                    options.find((opt, i) =>
-                      (Number.isInteger(correctIndex) &&
-                       String(answer).trim() !== "" &&
-                       i === correctIndex) ||
-                      str(answer) === str(opt && opt.value) ||
-                      str(answer) === optionText(opt)
-                    ) !== undefined
-                      ? optionText(options.find((opt, i) =>
-                          (Number.isInteger(correctIndex) &&
-                           String(answer).trim() !== "" &&
-                           i === correctIndex) ||
-                          str(answer) === str(opt && opt.value) ||
-                          str(answer) === optionText(opt)
-                        ))
-                      : str(answer)
-                  );
-            }
-
-            let result = card.querySelector(".answer");
-            if (!result) {
-              result = document.createElement("p");
-              result.className = "answer";
-              card.appendChild(result);
-            }
-            result.textContent = resultText;
-          });
-
-          card.appendChild(button);
-        }
-
-        output.appendChild(card);
-      });
-    }
-
-    function renderCreative(items) {
-      items.forEach((item, index) => {
-        const card = document.createElement("article");
-        card.className = "card";
-
-        addText(card, "h3", "সৃজনশীল প্রশ্ন " + (index + 1));
-
-        if (item.chapter) {
-          addText(card, "p", "অধ্যায়: " + item.chapter);
-        }
-
-        if (item.stimulus) {
-          addText(card, "p", "উদ্দীপক: " + item.stimulus);
-        }
-
-        array(item.questions).forEach((question, i) => {
-          const letters = ["ক", "খ", "গ", "ঘ"];
-          const value = question && typeof question === "object"
-            ? (question.question || question.text || question.title)
-            : question;
-
-          addText(
-            card,
-            "p",
-            (letters[i] || (i + 1)) + ". " + str(value)
-          );
-        });
-
-        output.appendChild(card);
-      });
-    }
-
-    function renderBoard(items) {
-      items.forEach((item, index) => {
-        const card = document.createElement("article");
-        card.className = "card";
-
-        addText(
-          card, "h3",
-          item.year
-            ? "বোর্ড প্রশ্ন — " + item.year
-            : "বোর্ড প্রশ্ন " + (index + 1)
-        );
-
-        [
-          ["বোর্ড", item.board],
-          ["বিষয়", item.subject],
-          ["অধ্যায়", item.chapter],
-          ["প্রশ্ন", item.question || item.text || item.stimulus]
-        ].forEach(([label, value]) => {
-          if (value !== undefined && value !== null && value !== "") {
-            addText(card, "p", label + ": " + str(value));
-          }
-        });
-
-        output.appendChild(card);
-      });
-    }
-
-    function render() {
-      output.replaceChildren();
-
-      const items = getFilteredItems();
-
-      status.className = "muted";
-      status.textContent = items.length
-        ? "মোট " + items.length + "টি প্রশ্ন পাওয়া গেছে।"
-        : "এই বিষয় বা অধ্যায়ে কোনো প্রশ্ন পাওয়া যায়নি।";
-
-      if (currentTab === "mcq") renderMCQ(items);
-      else if (currentTab === "creative") renderCreative(items);
-      else renderBoard(items);
-    }
-
-    function showError(message) {
-      status.className = "error";
-      status.textContent = message;
-      output.replaceChildren();
-    }
-
-    try {
-      if (!data || typeof data !== "object") {
-        showError(
-          "প্রশ্নের ফাইল লোড হয়নি। questions.js ফাইলটি repository-তে আছে কি না পরীক্ষা করো।"
-        );
-        return;
-      }
-
-      if (!Array.isArray(data.mcqQuestions)) {
-        showError(
-          "mcqQuestions তালিকা পাওয়া যায়নি। questions.js-এর ডেটা কাঠামো পরীক্ষা করতে হবে।"
-        );
-        return;
-      }
-
-      fillSubjects();
-      updateChapters();
-      render();
-
-      tabButtons.forEach(button => {
-        button.addEventListener("click", () => {
-          currentTab = button.dataset.tab;
-
-          tabButtons.forEach(tab => {
-            tab.classList.toggle("active", tab === button);
-          });
-
-          updateChapters();
-          render();
-        });
-      });
-
-      subjectFilter.addEventListener("change", () => {
-        updateChapters();
-        render();
-      });
-
-      chapterFilter.addEventListener("change", render);
-
-    } catch (error) {
-      console.error("HSC SmartPrep BD:", error);
-      showError("প্রশ্ন দেখাতে সমস্যা হয়েছে। পেজ রিফ্রেশ করে আবার চেষ্টা করো।");
-    }
-  })();
-  </script>
-</body>
-</html>
+    function detectSubject(id) {
+      const value = normalize(id);
+      if (value.includes("physics") || value.includes("পদার্থ")) return "physics";
+      if (value.includes("chemistry") || value.includes("রসায়ন") || value.includes("রসায়ন")) return "chemistry
