@@ -3,336 +3,180 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="HSC SmartPrep BD — বাংলা অধ্যায়ভিত্তিক স্টাডি গাইড, MCQ, CQ ও HSC পরীক্ষার প্রস্তুতি।">
   <meta name="theme-color" content="#075e54">
-  <meta name="description" content="HSC SmartPrep BD — এইচএসসি বিজ্ঞান বিভাগের অধ্যায়ভিত্তিক MCQ, সৃজনশীল ও বোর্ড-ধাঁচের অনুশীলনী প্রশ্ন।">
   <title>HSC SmartPrep BD | এইচএসসি প্রস্তুতি</title>
+
   <style>
     * { box-sizing: border-box; }
     body {
       margin: 0;
       font-family: Arial, "Noto Sans Bengali", sans-serif;
-      background: #f3f7f6;
-      color: #172b27;
+      background: #f5f8f7;
+      color: #20312d;
       line-height: 1.7;
     }
     header {
-      background: #075e54;
+      background: linear-gradient(135deg, #064e3b, #0d9488);
       color: white;
-      padding: 24px 16px;
       text-align: center;
+      padding: 34px 16px;
     }
-    header h1 { margin: 0; font-size: 27px; }
-    header p { margin: 5px 0 0; }
-    main { max-width: 850px; margin: auto; padding: 16px; }
-    .panel {
+    header h1 { margin: 0 0 8px; font-size: 30px; }
+    header p { margin: 0; }
+    nav {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 10px;
+      background: #ffffff;
+      padding: 12px;
+      box-shadow: 0 2px 8px #0000000d;
+    }
+    nav a {
+      color: #075e54;
+      text-decoration: none;
+      font-weight: bold;
+      padding: 5px 9px;
+    }
+    main {
+      width: min(100% - 28px, 1000px);
+      margin: 24px auto;
+    }
+    .hero, .section {
       background: white;
-      padding: 16px;
-      border-radius: 14px;
-      margin-bottom: 16px;
-      box-shadow: 0 2px 9px #0000000c;
+      border-radius: 16px;
+      padding: 22px;
+      margin-bottom: 22px;
+      box-shadow: 0 3px 12px #00000008;
     }
-    .controls { display: grid; gap: 10px; }
-    select, input, button {
-      font: inherit;
-      padding: 11px;
-      border-radius: 9px;
-      border: 1px solid #d0ded9;
-      width: 100%;
+    .hero { text-align: center; }
+    h2 { color: #075e54; margin-top: 0; }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+      gap: 14px;
     }
-    button {
-      background: #087f68;
+    .card {
+      display: block;
+      background: #f0fdf4;
+      border: 1px solid #d1fae5;
+      border-radius: 13px;
+      padding: 17px;
+      color: #075e54;
+      text-decoration: none;
+      transition: transform .15s;
+    }
+    .card:hover { transform: translateY(-3px); }
+    .card h3 { margin: 0 0 6px; }
+    .card p { margin: 0 0 8px; color: #40534d; }
+    .button {
+      display: inline-block;
+      background: #087f5b;
       color: white;
-      border: 0;
-      cursor: pointer;
+      padding: 10px 17px;
+      border-radius: 9px;
+      text-decoration: none;
       font-weight: bold;
     }
-    .tabs { display: grid; grid-template-columns: repeat(2, 1fr); gap: 8px; }
-    .tabs button { background: #e2efeb; color: #075e54; }
-    .tabs button.active { background: #075e54; color: white; }
-    .question {
-      border: 1px solid #e0e9e5;
-      padding: 14px;
-      border-radius: 11px;
-      margin: 12px 0;
-      background: #fff;
+    .note {
+      background: #fffbeb;
+      border-left: 4px solid #eab308;
+      padding: 12px;
+      border-radius: 8px;
     }
-    .question h3 { margin: 0 0 8px; font-size: 17px; }
-    .options { display: grid; gap: 7px; margin-top: 10px; }
-    .option {
-      background: #f3f7f6;
-      padding: 9px;
-      border-radius: 7px;
+    footer {
+      background: #123c35;
+      color: white;
+      text-align: center;
+      padding: 22px 14px;
+      margin-top: 32px;
     }
-    .answer { color: #087f45; font-weight: bold; margin-top: 10px; }
-    .muted { color: #63756e; font-size: 14px; }
-    .empty { text-align: center; padding: 25px 8px; }
-    footer { text-align: center; padding: 22px 12px; color: #61716b; }
-    footer a { color: #075e54; margin: 0 6px; }
-    [hidden] { display: none !important; }
-    @media (min-width: 600px) {
-      .controls { grid-template-columns: 1fr 1fr; }
-      .tabs { grid-template-columns: repeat(4, 1fr); }
-    }
+    footer a { color: #d1fae5; margin: 0 8px; }
   </style>
 </head>
+
 <body>
   <header>
-    <h1>HSC SmartPrep BD</h1>
-    <p>এইচএসসি প্রস্তুতি হোক আরও সহজ</p>
-    <p>বিজ্ঞান বিভাগের অধ্যায়ভিত্তিক অনুশীলন</p>
+    <h1>📚 HSC SmartPrep BD</h1>
+    <p>স্মার্ট প্রস্তুতি, আত্মবিশ্বাসের সঙ্গে এইচএসসি</p>
   </header>
 
+  <nav>
+    <a href="#home">হোম</a>
+    <a href="#guides">স্টাডি গাইড</a>
+    <a href="#questions">প্রশ্ন অনুশীলন</a>
+    <a href="about.html">আমাদের সম্পর্কে</a>
+    <a href="contact.html">যোগাযোগ</a>
+  </nav>
+
   <main>
-    <section class="panel">
-      <h2>📚 প্রশ্ন খুঁজুন</h2>
-      <div class="controls">
-        <select id="subject">
-          <option value="all">সকল বিষয়</option>
-          <option value="physics">পদার্থবিজ্ঞান</option>
-          <option value="chemistry">রসায়ন</option>
-          <option value="biology">জীববিজ্ঞান</option>
-          <option value="higher-math">উচ্চতর গণিত</option>
-          <option value="ict">তথ্য ও যোগাযোগ প্রযুক্তি (ICT)</option>
-        </select>
-        <select id="chapter">
-          <option value="all">সকল অধ্যায়</option>
-        </select>
-      </div>
-      <div style="margin-top:12px">
-        <input id="search" type="search" placeholder="প্রশ্ন বা অধ্যায় লিখে খুঁজুন...">
+    <section class="hero" id="home">
+      <h2>তোমার এইচএসসি প্রস্তুতি শুরু হোক এখান থেকে</h2>
+      <p>
+        বাংলা স্টাডি গাইড পড়ো, গুরুত্বপূর্ণ বিষয় ঝালিয়ে নাও
+        এবং নিয়মিত অনুশীলনের মাধ্যমে প্রস্তুতি শক্ত করো।
+      </p>
+      <a class="button" href="#guides">স্টাডি গাইড দেখো ↓</a>
+    </section>
+
+    <section class="section" id="guides">
+      <h2>📖 বিষয়ভিত্তিক স্টাডি গাইড</h2>
+      <p>প্রতিটি বিষয়ের গাইড খুলতে নিচের কার্ডে চাপ দাও।</p>
+
+      <div class="grid">
+        <a class="card" href="physics-guide.html">
+          <h3>⚛️ পদার্থবিজ্ঞান</h3>
+          <p>পরিমাপ, একক ও মাত্রা</p>
+          <strong>গাইড পড়ুন →</strong>
+        </a>
+
+        <a class="card" href="chemistry-guide.html">
+          <h3>🧪 রসায়ন</h3>
+          <p>পর্যায়বৃত্ত ধর্ম</p>
+          <strong>গাইড পড়ুন →</strong>
+        </a>
+
+        <a class="card" href="biology-guide.html">
+          <h3>🧬 জীববিজ্ঞান</h3>
+          <p>কোষ ও কোষের গঠন</p>
+          <strong>গাইড পড়ুন →</strong>
+        </a>
+
+        <a class="card" href="math-guide.html">
+          <h3>📐 উচ্চতর গণিত</h3>
+          <p>ম্যাট্রিক্স ও নির্ণায়ক</p>
+          <strong>গাইড পড়ুন →</strong>
+        </a>
+
+        <a class="card" href="ict-guide.html">
+          <h3>💻 তথ্য ও যোগাযোগ প্রযুক্তি</h3>
+          <p>সংখ্যা পদ্ধতি ও রূপান্তর</p>
+          <strong>গাইড পড়ুন →</strong>
+        </a>
       </div>
     </section>
 
-    <section class="panel">
-      <div class="tabs">
-        <button class="active" data-mode="mcq">MCQ</button>
-        <button data-mode="creative">সৃজনশীল</button>
-        <button data-mode="board">বোর্ড-ধাঁচের</button>
-        <button data-mode="all">সব প্রশ্ন</button>
+    <section class="section" id="questions">
+      <h2>✍️ প্রশ্ন অনুশীলন</h2>
+      <p>
+        তোমার আগের অধ্যায়ভিত্তিক MCQ, CQ, বোর্ড প্রশ্ন ও
+        ব্যাখ্যাগুলো এই অংশে অক্ষত রেখে সংযুক্ত করতে হবে।
+      </p>
+      <div class="note">
+        <strong>গুরুত্বপূর্ণ:</strong>
+        এই নতুন টেমপ্লেটে তোমার আগের প্রশ্নের ডেটা নেই।
+        পুরোনো প্রশ্নগুলো ফিরিয়ে আনতে বা সংযুক্ত করতে বর্তমান
+        index.html-এর প্রশ্ন-সংক্রান্ত কোড রাখতে হবে।
       </div>
-      <p class="muted" id="count">প্রশ্ন লোড হচ্ছে...</p>
-      <div id="questions"></div>
     </section>
   </main>
 
   <footer>
-    <p>© 2026 HSC SmartPrep BD</p>
-    <a href="./index.html">হোম</a>
-    <a href="./privacy.html">Privacy Policy</a>
-    <a href="./contact.html">যোগাযোগ</a>
+    <p>© HSC SmartPrep BD</p>
+    <a href="about.html">আমাদের সম্পর্কে</a>
+    <a href="contact.html">যোগাযোগ</a>
+    <a href="privacy.html">গোপনীয়তা নীতি</a>
   </footer>
-
-  <!-- Load question data first -->
-  <script src="./questions.js"></script>
-  <script src="./extra-questions.js"></script>
-  <script src="./chapter-data.js"></script>
-
-  <script>
-    (() => {
-      const data = window.HSC_SMARTPREP_DATA;
-      const subjectEl = document.getElementById("subject");
-      const chapterEl = document.getElementById("chapter");
-      const searchEl = document.getElementById("search");
-      const listEl = document.getElementById("questions");
-      const countEl = document.getElementById("count");
-      let mode = "mcq";
-
-      const subjectNames = {
-        physics: "পদার্থবিজ্ঞান",
-        chemistry: "রসায়ন",
-        biology: "জীববিজ্ঞান",
-        "higher-math": "উচ্চতর গণিত",
-        ict: "তথ্য ও যোগাযোগ প্রযুক্তি"
-      };
-
-      function arr(value) {
-        return Array.isArray(value) ? value : [];
-      }
-
-      function getSubject(q) {
-        return String(q.subject || "").toLowerCase();
-      }
-
-      function getChapter(q) {
-        return q.chapter || q.chapterName || "অধ্যায় উল্লেখ নেই";
-      }
-
-      function findCreative() {
-        if (!data) return [];
-        for (const key of Object.keys(data)) {
-          if (Array.isArray(data[key]) &&
-              data[key].some(q => q && (q.stimulus || q.passage) &&
-              !Array.isArray(q.options))) {
-            return data[key].filter(q => q && (q.stimulus || q.passage) &&
-              !Array.isArray(q.options));
-          }
-        }
-        return arr(data.creativeQuestions);
-      }
-
-      function getSets() {
-        return {
-          mcq: arr(data && data.mcqQuestions),
-          creative: findCreative(),
-          board: arr(data && data.boardQuestions)
-        };
-      }
-
-      function subjectLabel(value) {
-        return subjectNames[value] || value || "";
-      }
-
-      function escapeHTML(value) {
-        return String(value == null ? "" : value).replace(/[&<>"']/g, c => ({
-          "&": "&amp;", "<": "&lt;", ">": "&gt;",
-          '"': "&quot;", "'": "&#39;"
-        })[c]);
-      }
-
-      function refreshChapters() {
-        const old = chapterEl.value;
-        const selectedSubject = subjectEl.value;
-        const sets = getSets();
-        const all = [...sets.mcq, ...sets.creative, ...sets.board];
-        const chapters = [...new Set(all
-          .filter(q => selectedSubject === "all" ||
-            getSubject(q) === selectedSubject)
-          .map(getChapter))];
-
-        chapterEl.innerHTML = '<option value="all">সকল অধ্যায়</option>';
-        chapters.forEach(ch => {
-          const option = document.createElement("option");
-          option.value = ch;
-          option.textContent = ch;
-          chapterEl.appendChild(option);
-        });
-        if (chapters.includes(old)) chapterEl.value = old;
-      }
-
-      function matches(q) {
-        const subject = subjectEl.value;
-        const chapter = chapterEl.value;
-        const search = searchEl.value.trim().toLowerCase();
-        if (subject !== "all" && getSubject(q) !== subject) return false;
-        if (chapter !== "all" && getChapter(q) !== chapter) return false;
-        if (search) {
-          const content = JSON.stringify(q).toLowerCase();
-          if (!content.includes(search)) return false;
-        }
-        return true;
-      }
-
-      function renderMCQ(q, index) {
-        const options = arr(q.options);
-        const optionHTML = options.map((op, i) =>
-          '<div class="option">' +
-          escapeHTML(typeof op === "object" ? (op.text || op.option || "") : op) +
-          '</div>').join("");
-
-        let answer = q.answer;
-        if (typeof answer === "number" && options.length) {
-          answer = options[answer] ?? answer;
-        }
-        return '<article class="question">' +
-          '<div class="muted">' + escapeHTML(subjectLabel(getSubject(q))) +
-          ' · ' + escapeHTML(getChapter(q)) + '</div>' +
-          '<h3>' + (index + 1) + '. ' + escapeHTML(q.question || q.text || "") + '</h3>' +
-          '<div class="options">' + optionHTML + '</div>' +
-          '<details><summary>উত্তর দেখুন</summary><p class="answer">' +
-          escapeHTML(answer == null ? "উত্তর দেওয়া হয়নি" : answer) +
-          '</p>' + (q.explanation ? '<p>' + escapeHTML(q.explanation) + '</p>' : '') +
-          '</details></article>';
-      }
-
-      function renderCreative(q, index) {
-        const sub = arr(q.questions);
-        const subHTML = sub.map((s, i) => {
-          const text = typeof s === "string" ? s :
-            (s.question || s.text || JSON.stringify(s));
-          return '<p>' + ["ক", "খ", "গ", "ঘ"][i % 4] + ') ' +
-            escapeHTML(text) + '</p>';
-        }).join("");
-
-        return '<article class="question">' +
-          '<div class="muted">' + escapeHTML(subjectLabel(getSubject(q))) +
-          ' · ' + escapeHTML(getChapter(q)) + '</div>' +
-          '<h3>সৃজনশীল প্রশ্ন ' + (index + 1) + '</h3>' +
-          '<p><b>উদ্দীপক:</b> ' + escapeHTML(q.stimulus || q.passage || "") + '</p>' +
-          subHTML +
-          (q.answer || q.explanation
-            ? '<details><summary>সমাধান/ব্যাখ্যা দেখুন</summary><p>' +
-              escapeHTML(q.answer || q.explanation) + '</p></details>' : '') +
-          '</article>';
-      }
-
-      function renderBoard(q, index) {
-        return '<article class="question">' +
-          '<div class="muted">' + escapeHTML(subjectLabel(getSubject(q))) +
-          ' · ' + escapeHTML(getChapter(q)) + '</div>' +
-          '<h3>অনুশীলনী ' + (index + 1) + '</h3>' +
-          '<p>' + escapeHTML(q.question || q.text || q.stimulus || "") + '</p>' +
-          (q.year ? '<p class="muted">বছর/ধরন: ' + escapeHTML(q.year) + '</p>' : '') +
-          (q.answer || q.explanation
-            ? '<details><summary>উত্তর/ব্যাখ্যা দেখুন</summary><p>' +
-              escapeHTML(q.answer || q.explanation) + '</p></details>' : '') +
-          '</article>';
-      }
-
-      function render() {
-        if (!data) {
-          countEl.textContent = "প্রশ্নের ফাইল লোড হয়নি।";
-          listEl.innerHTML =
-            '<div class="empty">questions.js ফাইলটি পরীক্ষা করুন।</div>';
-          return;
-        }
-
-        const sets = getSets();
-        let items = [];
-
-        if (mode === "mcq" || mode === "all") {
-          items.push(...sets.mcq.filter(matches).map(q => ({q, type:"mcq"})));
-        }
-        if (mode === "creative" || mode === "all") {
-          items.push(...sets.creative.filter(matches).map(q => ({q, type:"creative"})));
-        }
-        if (mode === "board" || mode === "all") {
-          items.push(...sets.board.filter(matches).map(q => ({q, type:"board"})));
-        }
-
-        countEl.textContent = "মোট " + items.length + "টি প্রশ্ন";
-        if (!items.length) {
-          listEl.innerHTML =
-            '<div class="empty">এই বিভাগে প্রশ্ন পাওয়া যায়নি। অন্য বিষয় বা অধ্যায় বেছে নিন।</div>';
-          return;
-        }
-
-        listEl.innerHTML = items.map((item, i) => {
-          if (item.type === "mcq") return renderMCQ(item.q, i);
-          if (item.type === "creative") return renderCreative(item.q, i);
-          return renderBoard(item.q, i);
-        }).join("");
-      }
-
-      document.querySelectorAll("[data-mode]").forEach(button => {
-        button.addEventListener("click", () => {
-          mode = button.dataset.mode;
-          document.querySelectorAll("[data-mode]").forEach(b =>
-            b.classList.toggle("active", b === button));
-          refreshChapters();
-          render();
-        });
-      });
-
-      subjectEl.addEventListener("change", () => {
-        refreshChapters();
-        render();
-      });
-      chapterEl.addEventListener("change", render);
-      searchEl.addEventListener("input", render);
-
-      refreshChapters();
-      render();
-    })();
-  </script>
 </body>
 </html>
