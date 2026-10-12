@@ -3,126 +3,211 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="HSC SmartPrep BD — বাংলা অধ্যায়ভিত্তিক স্টাডি গাইড, MCQ, CQ ও HSC পরীক্ষার প্রস্তুতি।">
   <meta name="theme-color" content="#075e54">
+  <meta name="description" content="HSC SmartPrep BD — এইচএসসি শিক্ষার্থীদের জন্য বাংলা স্টাডি গাইড, MCQ, CQ এবং বোর্ড প্রশ্নের অনুশীলন।">
   <title>HSC SmartPrep BD | এইচএসসি প্রস্তুতি</title>
 
   <style>
     * { box-sizing: border-box; }
+
     body {
       margin: 0;
       font-family: Arial, "Noto Sans Bengali", sans-serif;
-      background: #f5f8f7;
-      color: #20312d;
-      line-height: 1.7;
+      background: #f3f7f6;
+      color: #24332f;
+      line-height: 1.8;
     }
+
     header {
       background: linear-gradient(135deg, #064e3b, #0d9488);
       color: white;
+      padding: 36px 18px;
       text-align: center;
-      padding: 34px 16px;
     }
-    header h1 { margin: 0 0 8px; font-size: 30px; }
+
+    header h1 {
+      font-size: clamp(26px, 6vw, 38px);
+      margin: 0 0 8px;
+    }
+
     header p { margin: 0; }
+
     nav {
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-      gap: 10px;
-      background: #ffffff;
-      padding: 12px;
-      box-shadow: 0 2px 8px #0000000d;
-    }
-    nav a {
-      color: #075e54;
-      text-decoration: none;
-      font-weight: bold;
-      padding: 5px 9px;
-    }
-    main {
-      width: min(100% - 28px, 1000px);
-      margin: 24px auto;
-    }
-    .hero, .section {
       background: white;
-      border-radius: 16px;
+      padding: 12px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 8px;
+      position: sticky;
+      top: 0;
+      z-index: 5;
+      box-shadow: 0 2px 10px #0000000d;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: #075e54;
+      padding: 6px 9px;
+      font-weight: bold;
+      font-size: 14px;
+    }
+
+    main {
+      width: min(100% - 24px, 1000px);
+      margin: 22px auto;
+    }
+
+    .panel {
+      background: white;
+      border-radius: 18px;
       padding: 22px;
       margin-bottom: 22px;
-      box-shadow: 0 3px 12px #00000008;
+      box-shadow: 0 4px 16px #00000008;
     }
-    .hero { text-align: center; }
+
     h2 { color: #075e54; margin-top: 0; }
+
+    .hero {
+      text-align: center;
+      padding: 32px 22px;
+    }
+
+    .button {
+      display: inline-block;
+      background: #087f5b;
+      color: white;
+      border: 0;
+      border-radius: 10px;
+      padding: 10px 17px;
+      text-decoration: none;
+      font-weight: bold;
+      cursor: pointer;
+      font-size: 15px;
+    }
+
     .grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
       gap: 14px;
     }
+
     .card {
       display: block;
-      background: #f0fdf4;
-      border: 1px solid #d1fae5;
-      border-radius: 13px;
       padding: 17px;
+      border: 1px solid #d5eee1;
+      border-radius: 14px;
+      background: #f0fdf4;
+      text-decoration: none;
       color: #075e54;
-      text-decoration: none;
-      transition: transform .15s;
     }
-    .card:hover { transform: translateY(-3px); }
+
     .card h3 { margin: 0 0 6px; }
-    .card p { margin: 0 0 8px; color: #40534d; }
-    .button {
-      display: inline-block;
-      background: #087f5b;
-      color: white;
-      padding: 10px 17px;
-      border-radius: 9px;
-      text-decoration: none;
+    .card p { margin: 0 0 8px; color: #455b53; }
+
+    label {
+      display: block;
       font-weight: bold;
+      margin: 12px 0 5px;
     }
-    .note {
-      background: #fffbeb;
-      border-left: 4px solid #eab308;
+
+    select, input {
+      width: 100%;
       padding: 12px;
-      border-radius: 8px;
+      border: 1px solid #cbd5d1;
+      border-radius: 10px;
+      background: white;
+      font: inherit;
     }
+
+    .question {
+      border: 1px solid #e0e9e5;
+      padding: 16px;
+      border-radius: 13px;
+      margin: 14px 0;
+    }
+
+    .question h3 { margin-top: 0; }
+
+    .option {
+      display: block;
+      padding: 9px 11px;
+      margin: 8px 0;
+      background: #f7faf9;
+      border: 1px solid #e1e9e5;
+      border-radius: 9px;
+      cursor: pointer;
+    }
+
+    .option input {
+      width: auto;
+      margin-right: 8px;
+    }
+
+    .feedback {
+      font-weight: bold;
+      margin-top: 10px;
+    }
+
+    .cq-card {
+      background: #f7faf9;
+      padding: 16px;
+      border-radius: 12px;
+      margin: 12px 0;
+      border-left: 4px solid #0d9488;
+    }
+
+    .muted { color: #596963; font-size: 14px; }
+
     footer {
       background: #123c35;
       color: white;
+      padding: 25px 12px;
       text-align: center;
-      padding: 22px 14px;
-      margin-top: 32px;
+      margin-top: 30px;
     }
-    footer a { color: #d1fae5; margin: 0 8px; }
+
+    footer a {
+      color: #d1fae5;
+      margin: 5px 8px;
+      display: inline-block;
+    }
+
+    @media (max-width: 480px) {
+      .panel { padding: 17px; }
+      nav a { font-size: 13px; }
+    }
   </style>
 </head>
 
 <body>
   <header>
     <h1>📚 HSC SmartPrep BD</h1>
-    <p>স্মার্ট প্রস্তুতি, আত্মবিশ্বাসের সঙ্গে এইচএসসি</p>
+    <p>স্মার্ট প্রস্তুতি • নিয়মিত অনুশীলন • আত্মবিশ্বাসী সাফল্য</p>
   </header>
 
   <nav>
     <a href="#home">হোম</a>
     <a href="#guides">স্টাডি গাইড</a>
-    <a href="#questions">প্রশ্ন অনুশীলন</a>
-    <a href="about.html">আমাদের সম্পর্কে</a>
-    <a href="contact.html">যোগাযোগ</a>
+    <a href="#mcq">MCQ</a>
+    <a href="#cq">CQ</a>
+    <a href="#boards">বোর্ড প্রশ্ন</a>
   </nav>
 
   <main>
-    <section class="hero" id="home">
-      <h2>তোমার এইচএসসি প্রস্তুতি শুরু হোক এখান থেকে</h2>
+    <section class="panel hero" id="home">
+      <h2>এইচএসসি প্রস্তুতি শুরু করো আজই!</h2>
       <p>
-        বাংলা স্টাডি গাইড পড়ো, গুরুত্বপূর্ণ বিষয় ঝালিয়ে নাও
-        এবং নিয়মিত অনুশীলনের মাধ্যমে প্রস্তুতি শক্ত করো।
+        বিষয়ভিত্তিক গাইড পড়ো, MCQ অনুশীলন করো এবং
+        সৃজনশীল প্রশ্নের মাধ্যমে নিজের প্রস্তুতি যাচাই করো।
       </p>
-      <a class="button" href="#guides">স্টাডি গাইড দেখো ↓</a>
+      <a class="button" href="#guides">গাইড দেখো ↓</a>
+      <a class="button" href="#mcq">MCQ অনুশীলন ↓</a>
     </section>
 
-    <section class="section" id="guides">
+    <section class="panel" id="guides">
       <h2>📖 বিষয়ভিত্তিক স্টাডি গাইড</h2>
-      <p>প্রতিটি বিষয়ের গাইড খুলতে নিচের কার্ডে চাপ দাও।</p>
+      <p>সম্পূর্ণ গাইড খুলতে সংশ্লিষ্ট বিষয়ে চাপ দাও।</p>
 
       <div class="grid">
         <a class="card" href="physics-guide.html">
@@ -133,7 +218,7 @@
 
         <a class="card" href="chemistry-guide.html">
           <h3>🧪 রসায়ন</h3>
-          <p>পর্যায়বৃত্ত ধর্ম</p>
+          <p>পর্যায় সারণি ও পর্যায়বৃত্ত ধর্ম</p>
           <strong>গাইড পড়ুন →</strong>
         </a>
 
@@ -157,18 +242,113 @@
       </div>
     </section>
 
-    <section class="section" id="questions">
-      <h2>✍️ প্রশ্ন অনুশীলন</h2>
-      <p>
-        তোমার আগের অধ্যায়ভিত্তিক MCQ, CQ, বোর্ড প্রশ্ন ও
-        ব্যাখ্যাগুলো এই অংশে অক্ষত রেখে সংযুক্ত করতে হবে।
-      </p>
-      <div class="note">
-        <strong>গুরুত্বপূর্ণ:</strong>
-        এই নতুন টেমপ্লেটে তোমার আগের প্রশ্নের ডেটা নেই।
-        পুরোনো প্রশ্নগুলো ফিরিয়ে আনতে বা সংযুক্ত করতে বর্তমান
-        index.html-এর প্রশ্ন-সংক্রান্ত কোড রাখতে হবে।
+    <section class="panel" id="mcq">
+      <h2>✍️ MCQ অনুশীলন</h2>
+      <p>বিষয় বেছে প্রশ্নের উত্তর দাও। শেষে ফলাফল যাচাই করো।</p>
+
+      <label for="subject">বিষয় নির্বাচন</label>
+      <select id="subject">
+        <option value="all">সব বিষয়</option>
+        <option value="physics">পদার্থবিজ্ঞান</option>
+        <option value="chemistry">রসায়ন</option>
+        <option value="biology">জীববিজ্ঞান</option>
+        <option value="math">উচ্চতর গণিত</option>
+        <option value="ict">তথ্য ও যোগাযোগ প্রযুক্তি</option>
+      </select>
+
+      <div id="question-list" aria-live="polite"></div>
+      <button class="button" id="check-answers">উত্তর যাচাই করো</button>
+      <button class="button" id="reset-quiz" style="background:#475569">
+        আবার শুরু করো
+      </button>
+      <p id="result" aria-live="polite"></p>
+    </section>
+
+    <section class="panel" id="cq">
+      <h2>📝 সৃজনশীল প্রশ্ন (CQ)</h2>
+      <p>নিচের নমুনা প্রশ্নগুলোর উদ্দীপক পড়ে নিজের উত্তর লেখার অনুশীলন করো।</p>
+
+      <div class="cq-card">
+        <h3>পদার্থবিজ্ঞান — পরিমাপ</h3>
+        <p>
+          একজন শিক্ষার্থী একটি বস্তুর দৈর্ঘ্য পরিমাপ করে
+          2.50 m পেল।
+        </p>
+        <p>ক. ভৌত রাশি কী?</p>
+        <p>খ. মৌলিক ও লব্ধ রাশির পার্থক্য লেখো।</p>
+        <p>গ. দৈর্ঘ্য পরিমাপের SI একক উল্লেখ করো।</p>
+        <p>ঘ. পরিমাপে যথার্থতা ও নির্ভুলতার গুরুত্ব ব্যাখ্যা করো।</p>
       </div>
+
+      <div class="cq-card">
+        <h3>রসায়ন — পর্যায় সারণি</h3>
+        <p>
+          X ও Y দুটি মৌল একই পর্যায়ে অবস্থিত।
+          X-এর পারমাণবিক সংখ্যা Y-এর চেয়ে কম।
+        </p>
+        <p>ক. পারমাণবিক সংখ্যা কী?</p>
+        <p>খ. পর্যায়বৃত্ত ধর্ম বলতে কী বোঝ?</p>
+        <p>গ. একই পর্যায়ে বাম থেকে ডানে পারমাণবিক ব্যাসার্ধের প্রবণতা লেখো।</p>
+        <p>ঘ. মৌলের ধর্ম বোঝার ক্ষেত্রে পর্যায় সারণির গুরুত্ব বিশ্লেষণ করো।</p>
+      </div>
+
+      <div class="cq-card">
+        <h3>জীববিজ্ঞান — কোষ</h3>
+        <p>
+          একটি কোষে সুগঠিত নিউক্লিয়াস ও
+          বিভিন্ন ঝিল্লিবেষ্টিত অঙ্গাণু দেখা যায়।
+        </p>
+        <p>ক. কোষ কী?</p>
+        <p>খ. কোষকে জীবদেহের গঠনগত একক বলা হয় কেন?</p>
+        <p>গ. নিউক্লিয়াসের দুটি কাজ লেখো।</p>
+        <p>ঘ. জীবের কার্যক্রমে কোষীয় অঙ্গাণুর ভূমিকা ব্যাখ্যা করো।</p>
+      </div>
+
+      <div class="cq-card">
+        <h3>উচ্চতর গণিত — ম্যাট্রিক্স</h3>
+        <p>
+          A = [[1, 2], [3, 4]] একটি 2 × 2 ম্যাট্রিক্স।
+        </p>
+        <p>ক. ম্যাট্রিক্স কী?</p>
+        <p>খ. ম্যাট্রিক্সের ক্রম বলতে কী বোঝ?</p>
+        <p>গ. A-এর নির্ণায়ক নির্ণয় করো।</p>
+        <p>ঘ. ম্যাট্রিক্সের ব্যবহার সম্পর্কে উদাহরণসহ লেখো।</p>
+      </div>
+
+      <div class="cq-card">
+        <h3>ICT — সংখ্যা পদ্ধতি</h3>
+        <p>
+          একটি কম্পিউটার বাইনারি সংখ্যা ব্যবহার করে
+          তথ্য প্রক্রিয়াকরণ করে।
+        </p>
+        <p>ক. বিট কী?</p>
+        <p>খ. বাইনারি সংখ্যা পদ্ধতির ভিত্তি ২ কেন?</p>
+        <p>গ. (1010)₂-কে দশমিক সংখ্যায় রূপান্তর করো।</p>
+        <p>ঘ. কম্পিউটারে বাইনারি সংখ্যা পদ্ধতির প্রয়োজনীয়তা ব্যাখ্যা করো।</p>
+      </div>
+    </section>
+
+    <section class="panel" id="boards">
+      <h2>🏆 বোর্ড প্রশ্ন অনুশীলন</h2>
+      <p>
+        এখানে বোর্ড ও পরীক্ষার বছর অনুযায়ী যাচাইকৃত প্রশ্ন
+        যোগ করে সাজানো যাবে।
+      </p>
+      <p class="muted">
+        এই সংস্করণে নির্দিষ্ট বোর্ডের যাচাইকৃত প্রশ্নের সংগ্রহ
+        এখনো যোগ করা হয়নি। নমুনা প্রশ্নকে বোর্ড প্রশ্ন হিসেবে
+        উপস্থাপন করা হয়নি।
+      </p>
+    </section>
+
+    <section class="panel">
+      <h2>🎯 পড়াশোনার টিপস</h2>
+      <ul>
+        <li>প্রতিদিন একটি নির্দিষ্ট অধ্যায় পড়ো।</li>
+        <li>পড়া শেষে নিজে MCQ সমাধান করো।</li>
+        <li>সময় ধরে CQ লেখার অনুশীলন করো।</li>
+        <li>ভুল উত্তরগুলো আবার পড়ে বুঝে নাও।</li>
+      </ul>
     </section>
   </main>
 
@@ -178,5 +358,161 @@
     <a href="contact.html">যোগাযোগ</a>
     <a href="privacy.html">গোপনীয়তা নীতি</a>
   </footer>
+
+  <script>
+    const questions = [
+      {
+        subject: "physics",
+        chapter: "পরিমাপ",
+        question: "দৈর্ঘ্যের SI একক কোনটি?",
+        options: ["কিলোগ্রাম", "মিটার", "সেকেন্ড", "অ্যাম্পিয়ার"],
+        answer: 1,
+        explanation: "দৈর্ঘ্যের SI একক হলো মিটার (m)।"
+      },
+      {
+        subject: "chemistry",
+        chapter: "পর্যায় সারণি",
+        question: "একটি মৌলের পারমাণবিক সংখ্যা নির্দেশ করে কী?",
+        options: [
+          "নিউট্রনের সংখ্যা",
+          "শক্তিস্তরের সংখ্যা",
+          "প্রোটনের সংখ্যা",
+          "ভরসংখ্যা"
+        ],
+        answer: 2,
+        explanation: "পারমাণবিক সংখ্যা হলো নিউক্লিয়াসে প্রোটনের সংখ্যা।"
+      },
+      {
+        subject: "biology",
+        chapter: "কোষ",
+        question: "কোষের কার্যক্রম নিয়ন্ত্রণে প্রধান ভূমিকা রাখে কোনটি?",
+        options: ["নিউক্লিয়াস", "কোষপ্রাচীর", "ভ্যাকুওল", "রাইবোজোম"],
+        answer: 0,
+        explanation: "সুকেন্দ্রিক কোষে নিউক্লিয়াস জিনগত তথ্য ধারণ করে এবং বহু কোষীয় কার্যক্রম নিয়ন্ত্রণ করে।"
+      },
+      {
+        subject: "math",
+        chapter: "ম্যাট্রিক্স",
+        question: "একটি ম্যাট্রিক্সে 2টি সারি ও 3টি স্তম্ভ থাকলে তার ক্রম কত?",
+        options: ["3 × 2", "2 × 3", "2 × 2", "3 × 3"],
+        answer: 1,
+        explanation: "ম্যাট্রিক্সের ক্রম = সারির সংখ্যা × স্তম্ভের সংখ্যা।"
+      },
+      {
+        subject: "ict",
+        chapter: "সংখ্যা পদ্ধতি",
+        question: "(1010)₂-এর দশমিক মান কত?",
+        options: ["8", "9", "10", "12"],
+        answer: 2,
+        explanation: "1×2³ + 0×2² + 1×2¹ + 0×2⁰ = 10।"
+      }
+    ];
+
+    const subjectNames = {
+      physics: "পদার্থবিজ্ঞান",
+      chemistry: "রসায়ন",
+      biology: "জীববিজ্ঞান",
+      math: "উচ্চতর গণিত",
+      ict: "তথ্য ও যোগাযোগ প্রযুক্তি"
+    };
+
+    const subjectSelect = document.getElementById("subject");
+    const questionList = document.getElementById("question-list");
+    const result = document.getElementById("result");
+    let submitted = false;
+
+    function renderQuestions() {
+      submitted = false;
+      result.textContent = "";
+
+      const selected = subjectSelect.value;
+      const visible = questions
+        .map((q, index) => ({ ...q, originalIndex: index }))
+        .filter(q => selected === "all" || q.subject === selected);
+
+      questionList.innerHTML = "";
+
+      visible.forEach((q, number) => {
+        const card = document.createElement("div");
+        card.className = "question";
+
+        const title = document.createElement("h3");
+        title.textContent =
+          `${number + 1}. [${subjectNames[q.subject]} — ${q.chapter}] ${q.question}`;
+        card.appendChild(title);
+
+        q.options.forEach((option, optionIndex) => {
+          const label = document.createElement("label");
+          label.className = "option";
+
+          const radio = document.createElement("input");
+          radio.type = "radio";
+          radio.name = "question-" + q.originalIndex;
+          radio.value = optionIndex;
+
+          const text = document.createElement("span");
+          text.textContent = option;
+
+          label.appendChild(radio);
+          label.appendChild(text);
+          card.appendChild(label);
+        });
+
+        const feedback = document.createElement("p");
+        feedback.className = "feedback";
+        feedback.id = "feedback-" + q.originalIndex;
+        card.appendChild(feedback);
+
+        questionList.appendChild(card);
+      });
+    }
+
+    document.getElementById("check-answers").addEventListener("click", () => {
+      const selected = subjectSelect.value;
+      const visible = questions
+        .map((q, index) => ({ ...q, originalIndex: index }))
+        .filter(q => selected === "all" || q.subject === selected);
+
+      let score = 0;
+      let answered = 0;
+
+      visible.forEach(q => {
+        const chosen = document.querySelector(
+          'input[name="question-' + q.originalIndex + '"]:checked'
+        );
+        const feedback = document.getElementById(
+          "feedback-" + q.originalIndex
+        );
+
+        if (chosen) {
+          answered++;
+          if (Number(chosen.value) === q.answer) {
+            score++;
+            feedback.textContent = "✅ সঠিক উত্তর! " + q.explanation;
+            feedback.style.color = "#087f5b";
+          } else {
+            feedback.textContent =
+              "❌ সঠিক উত্তর: " + q.options[q.answer] +
+              "। " + q.explanation;
+            feedback.style.color = "#b42318";
+          }
+        } else {
+          feedback.textContent =
+            "উত্তর দেওয়া হয়নি। সঠিক উত্তর: " + q.options[q.answer];
+          feedback.style.color = "#a16207";
+        }
+      });
+
+      submitted = true;
+      result.textContent =
+        "ফলাফল: " + score + "/" + visible.length +
+        " সঠিক। উত্তর দিয়েছ " + answered + "টি প্রশ্নের।";
+    });
+
+    document.getElementById("reset-quiz").addEventListener("click", renderQuestions);
+    subjectSelect.addEventListener("change", renderQuestions);
+
+    renderQuestions();
+  </script>
 </body>
 </html>
