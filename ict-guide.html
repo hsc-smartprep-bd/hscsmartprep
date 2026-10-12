@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="বাইনারি, দশমিক, অক্টাল ও হেক্সাডেসিমাল সংখ্যা পদ্ধতির বাংলা গাইড।">
+<meta name="theme-color" content="#075e54">
+<title>আইসিটি অধ্যয়ন গাইড | HSC SmartPrep BD</title>
+
+<style>
+*{box-sizing:border-box}body{margin:0;background:#f2f7f6;color:#19312d;font-family:Arial,"Noto Sans Bengali",sans-serif;line-height:1.85}
+header{background:linear-gradient(135deg,#075e54,#159b83);color:#fff;padding:26px 18px;text-align:center}
+header h1{margin:0;font-size:27px}header p{margin:8px 0 0}
+main{max-width:900px;margin:22px auto;padding:0 14px}
+.card{background:#fff;border-radius:14px;padding:20px;margin:15px 0;box-shadow:0 3px 14px #16352b0c}
+h2{color:#087f68;font-size:22px;margin-top:0}h3{color:#146c5a}
+.note{background:#e8f7f1;border-left:4px solid #159b83;padding:12px;border-radius:8px}
+li{margin:7px 0}.formula{font-family:Arial,sans-serif;background:#f1f5f9;padding:10px;border-radius:8px;display:block;overflow-wrap:anywhere}
+nav{display:flex;flex-wrap:wrap;gap:10px;margin:20px 0}nav a{background:#075e54;color:#fff;text-decoration:none;padding:9px 13px;border-radius:8px}
+small{color:#5d706b}footer{text-align:center;color:#64746f;padding:20px}
+</style>
+
+</head>
+<body>
+<header><h1>HSC SmartPrep BD</h1><p>এইচএসসি তথ্য ও যোগাযোগ প্রযুক্তি • সংখ্যা পদ্ধতি</p></header>
+<main>
+<div class="card"><p>বাইনারি, দশমিক, অক্টাল ও হেক্সাডেসিমাল সংখ্যা পদ্ধতির বাংলা গাইড।</p><p>এই গাইডটি দ্রুত পুনরাবৃত্তি ও অনুশীলনের জন্য তৈরি। পরীক্ষার প্রস্তুতিতে নিজের পাঠ্যবই ও শিক্ষকের নির্দেশনার সঙ্গে মিলিয়ে পড়বে।</p></div>
+
+<section class="card"><h2>১. সংখ্যা পদ্ধতি কী?</h2>
+<p>সংখ্যা প্রকাশের জন্য ব্যবহৃত অঙ্ক ও নিয়মের ব্যবস্থাকে সংখ্যা পদ্ধতি বলে। কোনো সংখ্যা পদ্ধতির ভিত্তি (base) হলো এতে ব্যবহৃত ভিন্ন অঙ্কের সংখ্যা।</p>
+<ul><li>দশমিক: ভিত্তি ১০; অঙ্ক ০–৯।</li><li>বাইনারি: ভিত্তি ২; অঙ্ক ০ ও ১।</li><li>অক্টাল: ভিত্তি ৮; অঙ্ক ০–৭।</li><li>হেক্সাডেসিমাল: ভিত্তি ১৬; অঙ্ক ০–৯ ও A–F, যেখানে A=১০ থেকে F=১৫।</li></ul>
+<div class="note">কম্পিউটারের ডিজিটাল সার্কিটে বাইনারি পদ্ধতি গুরুত্বপূর্ণ, কারণ দুটি অবস্থা সহজে ০ ও ১ দিয়ে প্রকাশ করা যায়।</div>
+</section>
+<section class="card"><h2>২. স্থানীয় মানের ধারণা</h2>
+<p>যেকোনো ভিত্তির সংখ্যায় প্রতিটি অঙ্কের মান তার অবস্থান ও ভিত্তির ঘাতের ওপর নির্ভর করে।</p>
+<span class="formula">(1011)₂ = 1×2³ + 0×2² + 1×2¹ + 1×2⁰ = (11)₁₀</span>
+<span class="formula">(25)₁₀ = 2×10¹ + 5×10⁰</span>
+<p>বাইনারি থেকে দশমিকে রূপান্তরে ডান দিক থেকে ঘাত ০ শুরু করে প্রতিটি বিটকে ২-এর সংশ্লিষ্ট ঘাত দিয়ে গুণ করে যোগ করো।</p>
+</section>
+<section class="card"><h2>৩. দশমিক থেকে বাইনারি</h2>
+<p>পূর্ণসংখ্যাকে বারবার ২ দিয়ে ভাগ করো, প্রতিবারের ভাগশেষ লিখে রাখো। ভাগফল শূন্য হলে ভাগশেষগুলো নিচ থেকে ওপরে পড়লে বাইনারি সংখ্যা পাওয়া যায়।</p>
+<p><b>উদাহরণ:</b> ১৩ ÷ ২ = ৬ ভাগশেষ ১; ৬ ÷ ২ = ৩ ভাগশেষ ০; ৩ ÷ ২ = ১ ভাগশেষ ১; ১ ÷ ২ = ০ ভাগশেষ ১। তাই (১৩)₁₀ = (1101)₂।</p>
+<h3>বিট ও বাইট</h3><p>বিট হলো তথ্যের ক্ষুদ্রতম বাইনারি একক। ১ বাইটে ৮ বিট থাকে।</p>
+</section>
+<section class="card"><h2>৪. অনুশীলনী</h2><ol><li>বাইনারি সংখ্যা পদ্ধতির ভিত্তি কত?</li><li>(1010)₂-কে দশমিকে রূপান্তর করো।</li><li>(12)₁₀-কে বাইনারিতে রূপান্তর করো।</li><li>১ বাইটে কয়টি বিট থাকে?</li></ol>
+<h3>উত্তর ও ব্যাখ্যা</h3><ol><li>২।</li><li>১×২³ + ০×২² + ১×২¹ + ০×২⁰ = ৮ + ২ = ১০।</li><li>১২ ÷ ২-এর ভাগশেষগুলো নিচ থেকে ওপরে পড়লে ১১০০; তাই (12)₁₀ = (1100)₂।</li><li>৮ বিট।</li></ol>
+</section>
+<div class="card"><h2>নিজেকে যাচাই করো</h2><p>প্রথমে উত্তর না দেখে অনুশীলনী সমাধান করো। ভুল হলে সংশ্লিষ্ট ধারণাটি আবার পড়ে নিজের ভাষায় ব্যাখ্যা লেখো।</p></div>
+<nav><a href="./">হোম পেজ</a><a href="about.html">আমাদের সম্পর্কে</a><a href="contact.html">যোগাযোগ</a><a href="privacy.html">গোপনীয়তা নীতি</a></nav>
+</main>
+<footer>© HSC SmartPrep BD • শিক্ষার্থীদের প্রস্তুতিতে সহায়ক</footer>
+</body>
+</html>
